@@ -812,15 +812,23 @@ if('IntersectionObserver' in window){
   reveals.forEach(function(el){ el.classList.add('in'); });
 }
 
-/* ---------- Hero underline draw (JS-driven, fully drawn if JS absent) ---------- */
+/* ---------- Hero underline: draws in real time with scroll (fully drawn if JS absent) ---------- */
 try{
   var hl = document.querySelector('.hero .hl path');
   if(hl){
     var hlen = hl.getTotalLength();
     hl.style.strokeDasharray = hlen;
-    hl.style.strokeDashoffset = hlen;
-    hl.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(.22,.8,.32,1) .5s';
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){ hl.style.strokeDashoffset = 0; }); });
+    var hlTick = false;
+    var hlDraw = function(){
+      hlTick = false;
+      /* 8% visible at rest as a hint; fully drawn after ~55% of a viewport of scrolling */
+      var p = Math.min(1, .08 + (window.scrollY / (window.innerHeight * .55)));
+      hl.style.strokeDashoffset = hlen * (1 - p);
+    };
+    window.addEventListener('scroll', function(){
+      if(!hlTick){ hlTick = true; requestAnimationFrame(hlDraw); }
+    },{passive:true});
+    hlDraw();
   }
 }catch(e){}
 
