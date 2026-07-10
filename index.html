@@ -160,6 +160,39 @@ section{position:relative}
 .svc h3{font-size:1.02rem;margin-bottom:8px}
 .svc p{color:var(--text-soft);font-size:.87rem;line-height:1.5}
 
+/* ============ TRAFFIC ENGINE (weaving draw-on-scroll path) ============ */
+.tflow{position:relative;display:flex;flex-direction:column;gap:46px;max-width:920px;margin:0 auto}
+.tpath{position:absolute;left:50%;top:6px;bottom:6px;width:150px;transform:translateX(-50%);pointer-events:none}
+.tpath svg{width:100%;height:100%;overflow:visible}
+.tpath path{stroke:var(--lime);stroke-width:3.5;fill:none;stroke-linecap:round}
+.tpath .ghost{stroke:var(--line)}
+.tp{position:relative;z-index:1;width:calc(50% - 52px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.22,.8,.32,1),box-shadow .3s,border-color .3s}
+.tp:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);border-color:rgba(139,92,246,.45)}
+.tp.tleft{align-self:flex-start}
+.tp.tright{align-self:flex-end}
+.tp::before{content:'';position:absolute;top:36px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--line-2);transition:background .4s,border-color .4s,box-shadow .4s}
+.tp.tleft::before{right:-59px}
+.tp.tright::before{left:-59px}
+.js .tp.in::before,html:not(.js) .tp::before{background:var(--lime);border-color:var(--lime);box-shadow:0 0 14px rgba(182,245,66,.55)}
+.tp .ic{width:52px;height:52px;border-radius:14px;background:var(--violet-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.tp .ic svg{width:28px;height:28px;stroke:var(--violet-lt);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.tp h3{font-size:1.12rem;margin-bottom:8px}
+.tp p{color:var(--text-soft);font-size:.93rem}
+.tp .tag{display:inline-block;margin-top:14px;font-size:.76rem;font-weight:700;color:var(--violet-lt);background:var(--violet-soft);padding:5px 12px;border-radius:99px}
+.tp .tnum{position:absolute;top:24px;right:24px;font-family:var(--font-d);font-weight:800;font-size:.8rem;color:var(--lime);opacity:.85}
+.tend{position:relative;z-index:1;margin:64px auto 0;max-width:640px;text-align:center;background:var(--card);border:1px solid rgba(182,245,66,.35);border-radius:24px;padding:44px 36px;box-shadow:var(--shadow-lift)}
+.tend .n{font-family:var(--font-d);font-weight:800;font-size:clamp(2.4rem,4.5vw,3.4rem);color:var(--lime);line-height:1}
+.tend h3{font-size:1.4rem;margin:12px 0 10px}
+.tend p{color:var(--text-soft);margin-bottom:26px}
+@media (max-width:820px){
+  .tflow{gap:30px}
+  .tp{width:auto;margin-left:40px}
+  .tp.tleft,.tp.tright{align-self:stretch}
+  .tp.tleft::before,.tp.tright::before{left:-29px;right:auto;top:30px}
+  .tpath{left:16px;width:4px;transform:none}
+  .tpath svg{width:4px}
+}
+
 /* ============ PROCESS (draw-on-scroll spine) ============ */
 .process{background:var(--bg-2)}
 .proc-grid{position:relative;display:grid;grid-template-columns:1fr;gap:36px;max-width:760px;margin:0 auto}
@@ -297,6 +330,12 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
   .stat-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .hero{padding:64px 0 52px}
+  .btn-ink{padding:14px 22px;white-space:normal}
+  .tend{padding:36px 20px}
+}
+@media (max-width:380px){
+  .hero h1 .hl{white-space:normal}
+  .hero h1 .hl svg{display:none}
 }
 </style>
 </head>
@@ -311,6 +350,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
     <nav class="nav-links">
       <a href="#work">Our Work</a>
       <a href="#services">Services</a>
+      <a href="#traffic">Traffic</a>
       <a href="#process">Process</a>
       <a href="#results">Results</a>
       <button class="btn btn-gold btn-sm" data-quote>Get My Quote</button>
@@ -320,6 +360,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
   <div class="mnav" id="mnav">
     <a href="#work">Our Work</a>
     <a href="#services">Services</a>
+    <a href="#traffic">Traffic</a>
     <a href="#process">Process</a>
     <a href="#results">Results</a>
     <button class="btn btn-gold btn-sm" data-quote style="margin-top:10px;align-self:flex-start">Get My Quote</button>
@@ -524,6 +565,71 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
   </div>
 </section>
 
+<!-- ============ TRAFFIC ENGINE ============ -->
+<section class="sec" id="traffic">
+  <div class="ambient">
+    <svg class="fa" style="top:6%;right:5%" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="none" stroke="#8b5cf6" stroke-width="1.4" opacity=".5"/></svg>
+    <svg class="fb" style="top:44%;left:2%" width="64" height="64" viewBox="0 0 64 64"><rect x="7" y="7" width="50" height="50" rx="13" fill="none" stroke="#2f2f44" stroke-width="1.5"/></svg>
+    <svg class="fc" style="bottom:8%;right:12%" width="48" height="48" viewBox="0 0 48 48"><path d="M24 4l6 14 14 1-11 10 3 15-12-8-12 8 3-15L4 19l14-1z" fill="none" stroke="#b6f542" stroke-width="1.4"/></svg>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="sec-head center reveal">
+      <div class="kicker">The traffic engine</div>
+      <h2>A beautiful website is step one. Then we send it customers.</h2>
+      <p>Launch is where most agencies stop. We build the engine that keeps ready-to-buy visitors flowing to your site — month after month.</p>
+    </div>
+    <div class="tflow" id="tflow">
+      <div class="tpath">
+        <svg preserveAspectRatio="none" viewBox="0 0 100 1200">
+          <path class="ghost" vector-effect="non-scaling-stroke" d="M50 0 C50 70 16 110 16 210 C16 310 84 350 84 450 C84 550 16 590 16 690 C16 790 84 830 84 930 C84 1030 50 1080 50 1200"/>
+          <path id="trafficPath" vector-effect="non-scaling-stroke" d="M50 0 C50 70 16 110 16 210 C16 310 84 350 84 450 C84 550 16 590 16 690 C16 790 84 830 84 930 C84 1030 50 1080 50 1200"/>
+        </svg>
+      </div>
+      <article class="tp tleft reveal">
+        <span class="tnum">01</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path class="di" d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg></div>
+        <h3>Google Business Profile domination</h3>
+        <p>Own the map. Reviews, weekly posts and job photos push you into the top 3 when locals search — where most calls happen.</p>
+        <span class="tag">Local pack ranking</span>
+      </article>
+      <article class="tp tright reveal">
+        <span class="tnum">02</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path class="di" d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z M16 16l5 5 M8 11h6 M11 8v6"/></svg></div>
+        <h3>Local SEO that pins you to page 1</h3>
+        <p>A page for every service in every suburb you cover — so Google knows exactly what you do, where, and shows you first.</p>
+        <span class="tag">Found when they search</span>
+      </article>
+      <article class="tp tleft reveal">
+        <span class="tnum">03</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path class="di" d="M12 3l2 5 5 .5-4 3.5 1.5 5-4.5-3-4.5 3L9 12 5 8.5 10 8z M19 3l1 2 2 .3-1.6 1.4.5 2.3-1.9-1.3"/></svg></div>
+        <h3>Recommended by AI</h3>
+        <p>When customers ask ChatGPT or Gemini "who's the best near me?" — your business is the answer. AI search is the new front page.</p>
+        <span class="tag">AEO built in</span>
+      </article>
+      <article class="tp tright reveal">
+        <span class="tnum">04</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path class="di" d="M3 17l6-6 4 4 8-8 M15 7h6v6"/></svg></div>
+        <h3>Ads that pay for themselves</h3>
+        <p>Google + Meta ads aimed at one area, one offer — every rand tracked to a WhatsApp enquiry, scaled only when it profits.</p>
+        <span class="tag">Rand-for-rand tracked</span>
+      </article>
+      <article class="tp tleft reveal">
+        <span class="tnum">05</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path class="di" d="M3 12a9 9 0 1 1 3 6.7 M3 22v-5h5 M12 8v4l3 2"/></svg></div>
+        <h3>Repeat traffic on tap</h3>
+        <p>Past customers are the cheapest traffic you'll ever get. WhatsApp broadcasts and review loops bring them back — with friends.</p>
+        <span class="tag">Compounding returns</span>
+      </article>
+    </div>
+    <div class="tend reveal">
+      <div class="n"><span data-count="3">3</span>×</div>
+      <h3>More traffic. More WhatsApp chats. More jobs.</h3>
+      <p>That's the average lift in enquiries our clients see once the traffic engine is running alongside their new site.</p>
+      <button class="btn btn-ink" data-quote>Turn My Traffic On →</button>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROCESS ============ -->
 <section class="sec process" id="process">
   <div class="ambient">
@@ -619,6 +725,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
         <h4>Explore</h4>
         <a href="#work">Our Work</a>
         <a href="#services">Services</a>
+        <a href="#traffic">Traffic Engine</a>
         <a href="#process">Process</a>
         <a href="#results">Results</a>
       </div>
@@ -654,6 +761,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
   <button class="rnode" data-sec="#top" title="Start"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8 M5 10v10h5v-6h4v6h5V10"/></svg></button>
   <button class="rnode" data-sec="#work" title="Our Work"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H4z M2 19h20"/></svg></button>
   <button class="rnode" data-sec="#services" title="Services"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M14 14h6v6h-6z"/></svg></button>
+  <button class="rnode" data-sec="#traffic" title="Traffic Engine"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8 M15 7h6v6"/></svg></button>
   <button class="rnode" data-sec="#process" title="Process"><svg viewBox="0 0 24 24"><path d="M6 21V3 M6 4h12l-2.5 4L18 12H6"/></svg></button>
   <button class="rnode" data-sec="#results" title="Results"><svg viewBox="0 0 24 24"><path d="M4 20V10 M10 20V4 M16 20v-8 M2 20h20"/></svg></button>
   <button class="rnode rnode-quote" data-sec=".bigcta" title="Get My Quote"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></button>
@@ -834,7 +942,7 @@ try{
 
 /* ---------- Icon draw-in on reveal (service icons) ---------- */
 try{
-  var icons = document.querySelectorAll('.svc .di');
+  var icons = document.querySelectorAll('.svc .di, .tp .di');
   if('IntersectionObserver' in window){
     var iio = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
@@ -850,6 +958,30 @@ try{
       });
     },{threshold:.4});
     icons.forEach(function(p){ iio.observe(p); });
+  }
+}catch(e){}
+
+/* ---------- Traffic path draw-on-scroll (weaving line) ---------- */
+try{
+  var tpath = document.getElementById('trafficPath');
+  var tflow = document.getElementById('tflow');
+  if(tpath && tflow){
+    var tlen = tpath.getTotalLength();
+    tpath.style.strokeDasharray = tlen;
+    tpath.style.strokeDashoffset = tlen;
+    var tticking = false;
+    var drawTraffic = function(){
+      tticking = false;
+      var r = tflow.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var p = (vh*0.75 - r.top) / r.height;
+      p = Math.max(0, Math.min(1, p));
+      tpath.style.strokeDashoffset = tlen * (1 - p);
+    };
+    window.addEventListener('scroll', function(){
+      if(!tticking){ tticking = true; requestAnimationFrame(drawTraffic); }
+    },{passive:true});
+    drawTraffic();
   }
 }catch(e){}
 
