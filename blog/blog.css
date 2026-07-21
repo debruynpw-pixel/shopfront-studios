@@ -144,12 +144,36 @@ img{max-width:100%;height:auto;display:block;border-radius:12px}
 
 /* niche hub grid */
 .niche-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;padding-bottom:70px}
-.niche-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;transition:border-color .25s,transform .25s}
-.niche-card:hover{border-color:var(--violet);transform:translateY(-3px)}
+.niche-card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .3s,transform .3s,box-shadow .3s}
+.niche-card::after{content:'';position:absolute;inset:0;border-radius:14px;background:radial-gradient(340px circle at 50% 0%,var(--violet-soft),transparent 70%);opacity:0;transition:opacity .35s;pointer-events:none}
+.niche-card:hover{border-color:var(--violet);transform:translateY(-4px);box-shadow:var(--shadow)}
+.niche-card:hover::after{opacity:1}
 .niche-card h2{font-family:var(--font-d);font-size:1.02rem;margin-bottom:6px}
 .niche-card h2 a{color:var(--text)}
 .niche-card:hover h2 a{color:var(--violet-lt)}
 .niche-card p{font-size:.88rem;color:var(--text-mute);margin:0}
+
+/* niche icons */
+.niche-ico{position:relative;z-index:1;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;
+  background:linear-gradient(140deg,var(--violet-soft),rgba(139,92,246,.04));
+  border:1px solid rgba(139,92,246,.24);
+  transition:background .3s,border-color .3s,transform .3s}
+.niche-ico svg{width:23px;height:23px;fill:none;stroke:var(--violet-lt);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s}
+.niche-card:hover .niche-ico{background:var(--lime-soft);border-color:rgba(182,245,66,.4);transform:translateY(-2px) rotate(-4deg)}
+.niche-card:hover .niche-ico svg{stroke:var(--lime)}
+
+/* draw-on-scroll: strokes trace themselves when the card enters view */
+.niche-ico svg path,.niche-ico svg circle,.niche-ico svg rect,.niche-ico svg line,.niche-ico svg polyline{
+  stroke-dasharray:var(--len,90);stroke-dashoffset:var(--len,90)}
+.niche-card.drawn .niche-ico svg path,
+.niche-card.drawn .niche-ico svg circle,
+.niche-card.drawn .niche-ico svg rect,
+.niche-card.drawn .niche-ico svg line,
+.niche-card.drawn .niche-ico svg polyline{
+  stroke-dashoffset:0;transition:stroke-dashoffset .9s cubic-bezier(.22,.8,.32,1) var(--d,0s)}
+@media(prefers-reduced-motion:reduce){
+  .niche-ico svg path,.niche-ico svg circle,.niche-ico svg rect,.niche-ico svg line,.niche-ico svg polyline{
+    stroke-dasharray:none;stroke-dashoffset:0}}
 
 /* legal / policy pages */
 .legal{max-width:var(--measure);margin:0 auto;padding:34px 0 70px}
