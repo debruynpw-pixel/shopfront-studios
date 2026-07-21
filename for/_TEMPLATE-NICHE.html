@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- ═══════════════════════════════════════════════════════════════════════
+     LUMEWORK NICHE LANDING PAGE TEMPLATE  (/for/<niche>.html)
+     Copy to for/<slug>.html and replace every {{TOKEN}}. Leave none behind.
+
+     This is a CONVERSION page, not an article. Different rules to the blog:
+       1. NEVER state Lumework's prices. Not a range, not a "from". Ever.
+          Every money question routes to the quote flow. Clients enquire.
+       2. The .answer box is written for the searcher, not for us — it must
+          answer "what does a {{NICHE}} website need?" in 40-60 standalone
+          words. This is the block AI engines lift verbatim.
+       3. Talk about THEIR customer's behaviour, not our features. What does
+          someone looking for a {{NICHE}} actually do on their phone?
+       4. Every claim concrete. No "cutting-edge", no "in today's digital
+          landscape", no "elevate your brand". Specific beats impressive.
+       5. FAQ HTML must mirror the FAQPage JSON-LD word for word.
+       6. Link to 2 other /for/ pages + at least 1 blog article.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE_60_CHARS_MAX}} — Lumework</title>
+<meta name="description" content="{{META_DESC_150_160_CHARS}}">
+<meta name="author" content="PW de Bruyn">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://lumework.studio/for/{{SLUG}}.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumework">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{META_DESC}}">
+<meta property="og:url" content="https://lumework.studio/for/{{SLUG}}.html">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:image" content="https://lumework.studio/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITLE}}">
+<meta name="twitter:description" content="{{META_DESC}}">
+<meta name="twitter:image" content="https://lumework.studio/og-cover.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog/blog.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238b5cf6'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='bold' text-anchor='middle' fill='%23b6f542'%3EL%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://lumework.studio/for/{{SLUG}}.html#service",
+      "name": "{{SERVICE_NAME_EG_Web_Design_for_Attorneys}}",
+      "description": "{{META_DESC}}",
+      "serviceType": "Web design",
+      "url": "https://lumework.studio/for/{{SLUG}}.html",
+      "provider": { "@id": "https://lumework.studio/#business" },
+      "areaServed": { "@type": "Country", "name": "South Africa" },
+      "audience": { "@type": "BusinessAudience", "audienceType": "{{AUDIENCE_EG_Attorneys_and_law_firms}}" },
+      "inLanguage": "en-ZA"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lumework.studio/" },
+        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://lumework.studio/for/" },
+        { "@type": "ListItem", "position": 3, "name": "{{SHORT_TITLE}}" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "{{FAQ_Q1}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A1}}" } },
+        { "@type": "Question", "name": "{{FAQ_Q2}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A2}}" } },
+        { "@type": "Question", "name": "{{FAQ_Q3}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A3}}" } },
+        { "@type": "Question", "name": "{{FAQ_Q4}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A4}}" } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="../index.html" class="logo"><span class="logo-mark">L</span>Lumework</a>
+    <nav class="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="index.html">Industries</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../index.html#quote" class="btn btn-lime">Free Quote</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Industries</a> &rsaquo; <span>{{SHORT_TITLE}}</span>
+  </nav>
+
+  <section class="lp-hero">
+    <p class="post-kicker">{{KICKER_EG_LEGAL}}</p>
+    <h1>{{H1_EG_Websites_for_South_African_Law_Firms}}</h1>
+    <p class="lp-sub">{{ONE_SENTENCE_PROMISE_ABOUT_THEIR_OUTCOME_NOT_OUR_FEATURES}}</p>
+    <div class="lp-actions">
+      <a href="../index.html#quote" class="btn btn-lime">Get a free quote &rarr;</a>
+      <a href="https://wa.me/27790227258" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp us</a>
+    </div>
+  </section>
+
+  <div class="lp-body">
+
+    <div class="answer">
+      <p class="answer-label">Short answer</p>
+      <p>{{WHAT_A_NICHE_WEBSITE_NEEDS_40_60_WORDS_STANDALONE}}</p>
+    </div>
+
+    <h2 id="behaviour">{{H2_1_EG_How_people_actually_choose_an_attorney}}</h2>
+    {{BODY_1_THEIR_CUSTOMERS_REAL_BEHAVIOUR}}
+
+    <h2 id="problems">{{H2_2_EG_Why_most_law_firm_websites_lose_the_enquiry}}</h2>
+    <div class="painlist">
+      <div class="pain"><p class="p-bad">{{PAIN_1}}</p><p class="p-fix">{{FIX_1}}</p></div>
+      <div class="pain"><p class="p-bad">{{PAIN_2}}</p><p class="p-fix">{{FIX_2}}</p></div>
+      <div class="pain"><p class="p-bad">{{PAIN_3}}</p><p class="p-fix">{{FIX_3}}</p></div>
+      <div class="pain"><p class="p-bad">{{PAIN_4}}</p><p class="p-fix">{{FIX_4}}</p></div>
+    </div>
+
+    <h2 id="build">{{H2_3_EG_What_we_build_into_a_law_firm_site}}</h2>
+    <div class="feat-grid">
+      <div class="feat"><h3>{{FEAT_1_TITLE}}</h3><p>{{FEAT_1_DESC}}</p></div>
+      <div class="feat"><h3>{{FEAT_2_TITLE}}</h3><p>{{FEAT_2_DESC}}</p></div>
+      <div class="feat"><h3>{{FEAT_3_TITLE}}</h3><p>{{FEAT_3_DESC}}</p></div>
+      <div class="feat"><h3>{{FEAT_4_TITLE}}</h3><p>{{FEAT_4_DESC}}</p></div>
+      <div class="feat"><h3>{{FEAT_5_TITLE}}</h3><p>{{FEAT_5_DESC}}</p></div>
+      <div class="feat"><h3>{{FEAT_6_TITLE}}</h3><p>{{FEAT_6_DESC}}</p></div>
+    </div>
+
+    <h2 id="found">{{H2_4_EG_How_a_law_firm_gets_found_in_South_Africa}}</h2>
+    {{BODY_4_LOCAL_SEO_AND_GBP_FOR_THIS_NICHE_LINK_TO_GBP_ARTICLE}}
+
+    <section class="faq" id="faq">
+      <h2>Frequently asked questions</h2>
+      <details><summary>{{FAQ_Q1}}</summary><p>{{FAQ_A1}}</p></details>
+      <details><summary>{{FAQ_Q2}}</summary><p>{{FAQ_A2}}</p></details>
+      <details><summary>{{FAQ_Q3}}</summary><p>{{FAQ_A3}}</p></details>
+      <details><summary>{{FAQ_Q4}}</summary><p>{{FAQ_A4}}</p></details>
+    </section>
+
+    <div class="cta">
+      <h3>{{CTA_HEADLINE}}</h3>
+      <p>{{CTA_SUBLINE_NO_PRICES_ROUTE_TO_ENQUIRY}}</p>
+      <a href="../index.html#quote" class="btn btn-lime">Get a free quote &rarr;</a>
+    </div>
+
+    <section class="related">
+      <h3>Also for</h3>
+      <div class="related-list">
+        <a href="{{RELATED_1_SLUG}}.html">{{RELATED_1_TITLE}}</a>
+        <a href="{{RELATED_2_SLUG}}.html">{{RELATED_2_TITLE}}</a>
+        <a href="../blog/{{RELATED_ARTICLE_SLUG}}.html">{{RELATED_ARTICLE_TITLE}}</a>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <span>&copy; 2026 Lumework. Built in South Africa.</span>
+    <div class="foot-links">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Industries</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/27790227258" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="#0a0a0f"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>
+</a>
+
+</body>
+</html>

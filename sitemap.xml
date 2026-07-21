@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lumework sitemap. Add a <url> block per new page. Keep <lastmod> honest —
+     faking freshness across the whole site is a known spam signal. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ═══ CORE ═══ -->
+  <url><loc>https://lumework.studio/</loc><lastmod>2026-07-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://lumework.studio/for/</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lumework.studio/blog/</loc><lastmod>2026-07-21</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lumework.studio/privacy.html</loc><lastmod>2026-07-21</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+
+  <!-- ═══ INDUSTRY LANDING PAGES ═══ -->
+  <url><loc>https://lumework.studio/for/attorneys.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/accountants.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/auto-repair.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/tyre-shops.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/salons.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/gyms.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/optometrists.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/dentists.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/vets.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/restaurants.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/electricians.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/for/plumbers.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ═══ BLOG ARTICLES ═══ -->
+  <url><loc>https://lumework.studio/blog/website-cost-south-africa.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/blog/google-business-profile-south-africa.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/blog/plumber-website-south-africa.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumework.studio/blog/website-vs-facebook-page.html</loc><lastmod>2026-07-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+</urlset>
