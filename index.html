@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) — Google Ads conversion tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18351834383"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18351834383');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- ═══════════════════════════════════════════════════════════════════
      SEO SWAP BLOCK — when you buy the domain + rename, change these 3:
@@ -12,7 +20,7 @@
      ═══════════════════════════════════════════════════════════════════ -->
 <title>Web Design South Africa | Affordable Small-Business Websites — Lumework</title>
 <meta name="description" content="Affordable web design for South African small businesses & trades. We build fast, SEO-ready websites that turn visitors into WhatsApp enquiries — quote tools, booking, CRM built in. Free quote in 60 seconds.">
-<meta name="keywords" content="web design south africa, affordable website small business, website designer, web design for tradesmen, whatsapp website, small business website south africa">
+<meta name="keywords" content="web design south africa, web design cape town, affordable website small business, website designer cape town, web design for tradesmen, whatsapp website, small business website south africa, ai solutions cape town, ai automation for business, ai chatbot for website, ai agency south africa, custom ai tools for business">
 <meta name="author" content="Lumework">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://lumework.studio/">
@@ -55,7 +63,8 @@
       "makesOffer": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Design", "description": "Premium mobile-first business websites." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO", "description": "Local SEO to rank in South African search results." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WhatsApp & CRM Automation", "description": "Automatic lead capture into WhatsApp and CRM." } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WhatsApp & CRM Automation", "description": "Automatic lead capture into WhatsApp and CRM." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Solutions", "description": "Custom AI solutions for South African businesses — AI chatbots, workflow automation, lead-qualifying assistants and AI integrations that save time and capture more customers." } }
       ]
     },
     {
@@ -1687,9 +1696,19 @@ document.getElementById('qsubmit').addEventListener('click', function(){
     }).catch(function(){});
   }catch(e){}
 
+  /* Google Ads — Request quote conversion */
+  try{ gtag('event','conversion',{'send_to':'AW-18351834383/ileWCJXgntccEI-K665E','value':100.0,'currency':'ZAR'}); }catch(e){}
+
   show(8);
   /* auto-open WhatsApp */
   setTimeout(function(){ window.open(waURL,'_blank'); }, 700);
+});
+
+/* Google Ads — WhatsApp Click conversion (fires on any wa.me link click) */
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp"]');
+  if(!a) return;
+  try{ gtag('event','conversion',{'send_to':'AW-18351834383/hizCCN_ch9ccEI-K665E','value':50.0,'currency':'ZAR'}); }catch(err){}
 });
 
 /* ---------- Left rail scroll journey ---------- */
