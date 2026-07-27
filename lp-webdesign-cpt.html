@@ -179,12 +179,42 @@ a{color:inherit;text-decoration:none}
 .qdone{text-align:center;padding:14px 0}
 .qdone .big{font-size:3rem;margin-bottom:8px}
 .qdone h3{margin-bottom:8px}.qdone p{color:var(--text-soft);margin-bottom:20px}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.8,.32,1),transform .7s cubic-bezier(.22,.8,.32,1)}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.mq-track,.wa-fab{animation:none}}
+.reveal.from-l{transform:translateX(-34px)}.reveal.from-r{transform:translateX(34px)}
+.reveal.scale{transform:scale(.94)}
+/* scroll progress bar */
+.sprog{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:linear-gradient(90deg,var(--violet),var(--lime));box-shadow:0 0 12px rgba(182,245,66,.6);transition:width .1s linear}
+/* ambient drifting shapes */
+.ambient{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.ambient svg{position:absolute;opacity:.5}
+.hero-grid,.sec .wrap,.finalcta{position:relative;z-index:1}
+.drift-a{animation:driftA 18s ease-in-out infinite}
+.drift-b{animation:driftB 22s ease-in-out infinite}
+@keyframes driftA{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(14px,-20px) rotate(8deg)}}
+@keyframes driftB{0%,100%{transform:translate(0,0)}50%{transform:translate(-18px,16px)}}
+/* hero underline draw */
+.uline{position:relative;display:inline-block}
+.uline svg{position:absolute;left:0;bottom:-6px;width:100%;height:14px;overflow:visible}
+.uline path{fill:none;stroke:var(--lime);stroke-width:5;stroke-linecap:round;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 1s ease .25s}
+.uline.in path{stroke-dashoffset:0}
+/* count-up */
+.hero-proof strong{transition:color .3s}
+/* signature pinned section */
+.sig{position:relative;height:220vh}
+.sig-stick{position:sticky;top:0;height:100vh;display:grid;place-items:center;overflow:hidden}
+.sig-bg{position:absolute;inset:0;background:radial-gradient(50% 50% at 50% 45%,var(--violet-soft),transparent 70%)}
+.sig-inner{position:relative;text-align:center;width:min(820px,90vw)}
+.sig-inner h2{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800;margin-bottom:14px}
+.sig-inner p{color:var(--text-soft);max-width:44ch;margin:0 auto 26px;font-size:1.06rem}
+.sig-word{display:inline-block;opacity:.14;transition:opacity .25s,color .25s,transform .25s}
+.sig-word.lit{opacity:1;color:var(--lime);transform:translateY(-2px)}
+.sig-ring{position:absolute;border-radius:50%;border:1.5px solid rgba(139,92,246,.35);left:50%;top:50%;translate:-50% -50%}
+@media(prefers-reduced-motion:reduce){.reveal,.uline path{opacity:1;transform:none;stroke-dashoffset:0!important}.mq-track,.wa-fab,.drift-a,.drift-b{animation:none}.sig{height:auto}.sig-stick{position:static;height:auto;padding:64px 0}.sig-word{opacity:1;color:inherit}}
 </style>
 </head>
 <body>
+<div class="sprog" id="sprog"></div>
 
 <!-- NAV -->
 <header class="nav">
@@ -196,10 +226,16 @@ a{color:inherit;text-decoration:none}
 
 <!-- HERO (offer + CTA above the fold) -->
 <section class="hero" id="top">
+  <div class="ambient">
+    <svg class="drift-a" style="top:8%;right:8%" width="130" height="130" viewBox="0 0 130 130"><circle cx="65" cy="65" r="62" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity=".55"/></svg>
+    <svg class="drift-b" style="top:56%;right:20%" width="64" height="64" viewBox="0 0 64 64"><rect x="7" y="7" width="50" height="50" rx="13" fill="none" stroke="#2f2f44" stroke-width="1.5"/></svg>
+    <svg class="drift-a" style="bottom:12%;left:5%" width="48" height="48" viewBox="0 0 48 48"><path d="M24 3l6 15 16 1-12 10 4 16-14-9-14 9 4-16L2 19l16-1z" fill="none" stroke="#b6f542" stroke-width="1.4" opacity=".6"/></svg>
+    <svg class="drift-b" style="top:24%;left:-24px" width="150" height="150" viewBox="0 0 150 150"><circle cx="75" cy="75" r="73" fill="#141426" opacity=".7"/></svg>
+  </div>
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow"><span class="dot"></span> Web Design · Cape Town</span>
-      <h1>Your website should be your <span class="hl">best salesperson</span> in Cape Town.</h1>
+      <h1>Your website should be your <span class="hl uline" id="uline">best salesperson<svg viewBox="0 0 300 14" preserveAspectRatio="none"><path d="M4 10 Q 75 2 150 8 T 296 6"/></svg></span> in Cape Town.</h1>
       <p class="lead">We build fast, mobile-first sites that turn local searches into WhatsApp enquiries — while you work.</p>
       <div class="offer">🎁 Free design concept + quote — back to you in a few hours</div>
       <div class="hero-ctas">
@@ -207,9 +243,9 @@ a{color:inherit;text-decoration:none}
         <a class="btn btn-line" href="#work">See Our Work</a>
       </div>
       <div class="hero-proof">
-        <div><strong>20+</strong> sites launched</div>
-        <div><strong>48hr</strong> first design</div>
-        <div><strong>100%</strong> mobile-ready</div>
+        <div><strong data-count="20" data-suffix="+">20+</strong> sites launched</div>
+        <div><strong data-count="48" data-suffix="hr">48hr</strong> first design</div>
+        <div><strong data-count="100" data-suffix="%">100%</strong> mobile-ready</div>
       </div>
     </div>
     <!-- mini quote starter (step 0 lives here, opens full modal) -->
@@ -277,6 +313,21 @@ a{color:inherit;text-decoration:none}
       <div class="fcard reveal"><div class="ico">🔍</div><h3>SEO ready</h3><p>Structured to rank locally so Cape Town customers actually find you.</p></div>
       <div class="fcard reveal"><div class="ico">🤖</div><h3>AI &amp; CRM automation</h3><p>Auto-replies, follow-ups and a dashboard that works while you sleep.</p></div>
       <div class="fcard reveal"><div class="ico">🎨</div><h3>Premium design</h3><p>A site that makes you look like the most trusted name in your trade.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE PINNED MOMENT (short scroll-scrub, ~1.3 screens) -->
+<section class="sig" id="sig" aria-label="How it works">
+  <div class="sig-stick">
+    <div class="sig-bg"></div>
+    <svg class="sig-ring" width="360" height="360" viewBox="0 0 360 360" aria-hidden="true"><circle cx="180" cy="180" r="178" fill="none" stroke="rgba(182,245,66,.18)" stroke-width="1"/></svg>
+    <svg class="sig-ring" width="560" height="560" viewBox="0 0 560 560" aria-hidden="true" style="opacity:.6"><circle cx="280" cy="280" r="278" fill="none" stroke="rgba(139,92,246,.18)" stroke-width="1"/></svg>
+    <div class="sig-inner">
+      <div class="kicker">The Lumework way</div>
+      <h2 id="sigline">We turn <span class="sig-word">clicks</span> <span class="sig-word">into</span> <span class="sig-word">WhatsApp</span> <span class="sig-word">enquiries</span> <span class="sig-word">— on</span> <span class="sig-word">autopilot.</span></h2>
+      <p>Strategy first, machine second, WhatsApp wired straight in. One obvious next step on every screen.</p>
+      <button class="btn btn-gold" data-quote>Get My Free Design Concept →</button>
     </div>
   </div>
 </section>
@@ -368,20 +419,40 @@ a{color:inherit;text-decoration:none}
           <button class="qopt"><span class="qi">🔝</span> Rank on Google</button>
         </div>
       </div>
-      <!-- step 2 (contact) -->
+      <!-- step 2 (vibe / theme) -->
       <div class="qpane" data-step="2">
+        <h3>What vibe fits your brand?</h3>
+        <p class="qsub">Gut feel is fine — we'll refine it together.</p>
+        <div class="qopts" data-key="vibe">
+          <button class="qopt"><span class="qi">🖤</span> Bold &amp; dark</button>
+          <button class="qopt"><span class="qi">🤍</span> Light &amp; clean</button>
+          <button class="qopt"><span class="qi">👑</span> Premium &amp; luxe</button>
+          <button class="qopt"><span class="qi">🎨</span> Fun &amp; colourful</button>
+        </div>
+      </div>
+      <!-- step 3 (contact + brand) -->
+      <div class="qpane" data-step="3">
         <h3>Where do we send it?</h3>
         <p class="qsub">We'll WhatsApp your free concept + quote in a few hours.</p>
         <div class="qfield"><label for="qname">Your name</label><input id="qname" type="text" placeholder="e.g. Peter" autocomplete="name"></div>
         <div class="qfield"><label for="qphone">Phone / WhatsApp</label><input id="qphone" type="tel" placeholder="079 123 4567" autocomplete="tel"></div>
         <div class="qfield"><label for="qbiz">Business (optional)</label><input id="qbiz" type="text" placeholder="e.g. Peter's Plumbing" autocomplete="organization"></div>
+        <div class="qfield">
+          <label>Do you have a logo?</label>
+          <div class="qopts" data-key="logo" style="grid-template-columns:1fr 1fr 1fr;gap:8px">
+            <button type="button" class="qopt" style="justify-content:center;padding:10px">Yes ✅</button>
+            <button type="button" class="qopt" style="justify-content:center;padding:10px">No ❌</button>
+            <button type="button" class="qopt" style="justify-content:center;padding:10px">Need one 🎨</button>
+          </div>
+        </div>
+        <div class="qfield"><label for="qbrand">Brand colours / anything you'd like (optional)</label><input id="qbrand" type="text" placeholder="e.g. navy + gold, similar to X, must feel premium"></div>
         <div class="qnav">
           <button class="qback" data-back>← Back</button>
           <button class="btn btn-gold" id="qsubmit">Get My Free Concept 🚀</button>
         </div>
       </div>
       <!-- done -->
-      <div class="qpane" data-step="3">
+      <div class="qpane" data-step="4">
         <div class="qdone">
           <div class="big">🎉</div>
           <h3>Brilliant — you're in!</h3>
@@ -403,8 +474,8 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 /* ===== quote flow ===== */
 var qmask=document.getElementById('qmask'), panes=[].slice.call(document.querySelectorAll('.qpane')),
     qfill=document.getElementById('qfill'), qlabel=document.getElementById('qlabel'), cur=0,
-    answers={type:'',goal:''};
-var STEPS=3;
+    answers={type:'',goal:'',vibe:'',logo:'',brand:''};
+var STEPS=4;
 function show(n){
   cur=n;
   panes.forEach(function(p){p.classList.toggle('on', parseInt(p.getAttribute('data-step'),10)===n);});
@@ -432,6 +503,8 @@ document.querySelectorAll('.qbody .qopts').forEach(function(grid){
     [].slice.call(grid.children).forEach(function(c){c.classList.remove('sel');});
     opt.classList.add('sel');
     answers[key]=opt.textContent.trim();
+    /* logo picker sits on the contact form — select only, don't advance */
+    if(key==='logo') return;
     setTimeout(function(){ show(Math.min(STEPS-1,cur+1)); }, 260);
   });
 });
@@ -441,16 +514,17 @@ document.addEventListener('click', function(e){ if(e.target.closest('[data-back]
 document.getElementById('qsubmit').addEventListener('click', function(){
   var name=document.getElementById('qname').value.trim(),
       phone=document.getElementById('qphone').value.trim(),
-      biz=document.getElementById('qbiz').value.trim();
+      biz=document.getElementById('qbiz').value.trim(),
+      brand=document.getElementById('qbrand').value.trim();
   if(!name || !phone){ alert('Please add your name and phone number 🙏'); return; }
-  var lines=['*New Quote Request — Lumework (CPT LP)*','','👤 Name: '+name,'🏢 Business: '+(biz||'—'),'📱 Phone: '+phone,'','🌐 Type: '+(answers.type||'—'),'🎯 Goal: '+(answers.goal||'—')];
+  var lines=['*New Quote Request — Lumework (CPT LP)*','','👤 Name: '+name,'🏢 Business: '+(biz||'—'),'📱 Phone: '+phone,'','🌐 Type: '+(answers.type||'—'),'🎯 Goal: '+(answers.goal||'—'),'🎨 Vibe: '+(answers.vibe||'—'),'🏷 Logo: '+(answers.logo||'—'),'🎨 Colours/notes: '+(brand||'—')];
   var waURL='https://wa.me/27790227258?text='+encodeURIComponent(lines.join('\n'));
   document.getElementById('qwa').href=waURL;
   /* email lead */
-  try{ fetch('https://formsubmit.co/ajax/debruynpw@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'🔥 New CPT LP lead: '+name+(biz?' ('+biz+')':''),_template:'table',_captcha:'false',Name:name,Business:biz,Phone:phone,Type:answers.type,Goal:answers.goal,Source:'lp-webdesign-cpt'})}).catch(function(){}); }catch(e){}
+  try{ fetch('https://formsubmit.co/ajax/debruynpw@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'🔥 New CPT LP lead: '+name+(biz?' ('+biz+')':''),_template:'table',_captcha:'false',Name:name,Business:biz,Phone:phone,Type:answers.type,Goal:answers.goal,Vibe:answers.vibe,Logo:answers.logo,Colours_Notes:brand,Source:'lp-webdesign-cpt'})}).catch(function(){}); }catch(e){}
   /* Google Ads — Request quote conversion */
   fireConv('quote',100);
-  show(3);
+  show(4);
   setTimeout(function(){ window.open(waURL,'_blank'); }, 700);
 });
 
@@ -460,6 +534,58 @@ document.addEventListener('click', function(e){
   if(!a) return;
   fireConv('wa',50);
 });
+
+/* ===== scroll animations ===== */
+(function(){
+  var RM = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  /* stagger reveals within a group */
+  document.querySelectorAll('.fgrid,.twoup,.hero-proof').forEach(function(c){
+    [].slice.call(c.children).forEach(function(ch,i){ if(ch.classList.contains('reveal')) ch.style.transitionDelay=(i*70)+'ms'; });
+  });
+
+  /* underline draw */
+  var uline=document.getElementById('uline');
+  if(uline){
+    var p=uline.querySelector('path'); var len=p.getTotalLength(); uline.style.setProperty('--len',len);
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){uline.classList.add('in');o.disconnect();}});},{threshold:.6}).observe(uline);
+  }
+
+  /* count-up */
+  function countUp(el){
+    var target=+el.getAttribute('data-count'), suf=el.getAttribute('data-suffix')||'';
+    if(RM){ el.textContent=target+suf; return; }
+    var dur=1100, t0=null;
+    function tick(ts){ if(!t0)t0=ts; var q=Math.min(1,(ts-t0)/dur); el.textContent=Math.round(target*(1-Math.pow(1-q,3)))+suf; if(q<1)requestAnimationFrame(tick); }
+    requestAnimationFrame(tick);
+  }
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target);}});},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+
+  if(RM) return; /* skip scroll-linked motion */
+
+  /* scroll progress + hero parallax + signature word-light */
+  var sprog=document.getElementById('sprog'),
+      heroAmb=document.querySelector('.hero .ambient'),
+      sig=document.getElementById('sig'),
+      words=[].slice.call(document.querySelectorAll('.sig-word')),
+      ticking=false;
+  function upd(){
+    var docH=document.documentElement.scrollHeight-window.innerHeight;
+    if(sprog) sprog.style.width=(docH>0?(window.scrollY/docH*100):0)+'%';
+    if(heroAmb && window.scrollY<window.innerHeight*1.5) heroAmb.style.transform='translateY('+(window.scrollY*0.12)+'px)';
+    if(sig){
+      var r=sig.getBoundingClientRect(), total=sig.offsetHeight-window.innerHeight;
+      var prog=Math.min(1,Math.max(0,(-r.top)/(total||1)));
+      var n=Math.ceil(prog*words.length*1.25);
+      words.forEach(function(w,i){ w.classList.toggle('lit', i<n); });
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){requestAnimationFrame(upd);ticking=true;} },{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
+})();
 </script>
 </body>
 </html>
