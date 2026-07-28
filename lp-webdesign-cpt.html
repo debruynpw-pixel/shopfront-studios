@@ -521,7 +521,7 @@ document.getElementById('qsubmit').addEventListener('click', function(){
   var waURL='https://wa.me/27790227258?text='+encodeURIComponent(lines.join('\n'));
   document.getElementById('qwa').href=waURL;
   /* email lead */
-  try{ fetch('https://formsubmit.co/ajax/Pieter@trylumework.co.za',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'🔥 New CPT LP lead: '+name+(biz?' ('+biz+')':''),_template:'table',_captcha:'false',Name:name,Business:biz,Phone:phone,Type:answers.type,Goal:answers.goal,Vibe:answers.vibe,Logo:answers.logo,Colours_Notes:brand,Source:'lp-webdesign-cpt'})}).catch(function(){}); }catch(e){}
+  try{ fetch('https://formsubmit.co/ajax/pieter@trylumework.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'🔥 New CPT LP lead: '+name+(biz?' ('+biz+')':''),_template:'table',_captcha:'false',Name:name,Business:biz,Phone:phone,Type:answers.type,Goal:answers.goal,Vibe:answers.vibe,Logo:answers.logo,Colours_Notes:brand,Source:'lp-webdesign-cpt'})}).catch(function(){}); }catch(e){}
   /* Google Ads — Request quote conversion */
   fireConv('quote',100);
   show(4);
