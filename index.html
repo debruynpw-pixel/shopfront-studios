@@ -55,7 +55,7 @@
       "description": "Affordable web design agency for South African small businesses and trades. Builds fast, SEO-ready websites with WhatsApp lead capture, quote tools, booking systems and CRM automation.",
       "url": "https://lumework.studio/",
       "telephone": "+27-79-022-7258",
-      "email": "debruynpw@gmail.com",
+      "email": "Pieter@trylumework.co.za",
       "areaServed": { "@type": "Country", "name": "South Africa" },
       "address": { "@type": "PostalAddress", "addressCountry": "ZA" },
       "founder": { "@type": "Person", "name": "PW de Bruyn" },
@@ -342,6 +342,71 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
 .wa-fab:hover{transform:scale(1.1)}
 .wa-fab svg{width:32px;height:32px;fill:#fff}
 
+/* ============ LANDING PANEL (ad entry point) ============ */
+.lp{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:var(--bg);padding:clamp(96px,12vh,140px) 0 clamp(40px,7vh,80px)}
+.lp-img{position:absolute;inset:0;z-index:0}
+.lp-img img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.lp-scrim{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(10,10,15,.96) 0%,rgba(10,10,15,.86) 38%,rgba(10,10,15,.42) 72%,rgba(10,10,15,.6) 100%)}
+.lp-scrim::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 0%,transparent 26%)}
+.lp-glow{position:absolute;z-index:1;width:640px;height:640px;border-radius:50%;top:-180px;left:-200px;pointer-events:none;
+  background:radial-gradient(circle,rgba(139,92,246,.3),transparent 68%);filter:blur(28px)}
+.lp .wrap{position:relative;z-index:3}
+.lp-copy{max-width:660px}
+.lp-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:1.7px;text-transform:uppercase;color:var(--lime);
+  border:1px solid rgba(182,245,66,.3);background:rgba(182,245,66,.09);padding:7px 14px;border-radius:99px;margin-bottom:24px}
+.lp-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:lpblink 2.4s ease-in-out infinite}
+@keyframes lpblink{0%,100%{opacity:1}50%{opacity:.25}}
+.lp h1{font-family:var(--font-d);font-weight:800;font-size:clamp(34px,5.4vw,64px);line-height:1.04;letter-spacing:-.025em}
+.lp h1 em{font-style:normal;color:var(--lime)}
+.lp-sub{color:var(--text-soft);font-size:clamp(15px,1.5vw,19px);line-height:1.6;max-width:52ch;margin:20px 0 14px}
+.lp-bullets{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 30px;padding:0;list-style:none}
+.lp-bullets li{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-soft)}
+.lp-bullets svg{width:16px;height:16px;stroke:var(--lime);stroke-width:2.6;fill:none;flex:none}
+.lp-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.lp-cta .btn{font-size:15px;padding:16px 28px}
+.lp-note{font-size:12.5px;color:var(--text-mute);margin-top:16px}
+.lp-trust{display:flex;gap:clamp(20px,4vw,46px);margin-top:40px;padding-top:28px;border-top:1px solid var(--line);flex-wrap:wrap}
+.lp-trust div{display:flex;flex-direction:column}
+.lp-trust .num{font-family:var(--font-d);font-weight:800;font-size:clamp(22px,2.6vw,32px);color:var(--lime);line-height:1}
+.lp-trust span{font-size:11.5px;color:var(--text-mute);letter-spacing:.5px;margin-top:6px}
+.lp-cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-mute)}
+.lp-cue svg{width:16px;height:16px;stroke:var(--text-mute);stroke-width:2;fill:none;animation:lpcue 2s ease-in-out infinite}
+@keyframes lpcue{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(5px);opacity:1}}
+@media(max-width:860px){
+  .lp{min-height:100svh;padding:clamp(88px,14vh,120px) 0 clamp(70px,10vh,96px)}
+  .lp-img img{object-position:center 55%}
+  .lp-scrim{background:linear-gradient(180deg,rgba(10,10,15,.9) 0%,rgba(10,10,15,.62) 40%,rgba(10,10,15,.93) 88%,var(--bg) 100%)}
+  .lp-copy{max-width:none}
+  .lp-sub{max-width:100%;font-size:15.5px}
+  .lp-cta{flex-direction:column;align-items:stretch}
+  .lp-cta .btn{width:100%;justify-content:center;text-align:center}
+  .lp-trust{gap:18px;justify-content:space-between}
+  .lp-cue{display:none}
+}
+@media (prefers-reduced-motion:reduce){.lp-eyebrow i,.lp-cue svg{animation:none}}
+
+/* ============ FLOATING QUOTE BUBBLE ============ */
+.q-fab{position:fixed;right:22px;bottom:94px;z-index:91;display:flex;align-items:center;gap:0;height:60px;padding:0;border:none;cursor:pointer;
+  border-radius:99px;background:var(--lime);color:#0c1202;font-family:var(--font-d);font-weight:700;font-size:14px;
+  box-shadow:0 8px 24px rgba(182,245,66,.4);transition:transform .25s,box-shadow .25s}
+.q-fab:hover{transform:scale(1.06);box-shadow:0 10px 30px rgba(182,245,66,.6)}
+.q-fab-ic{width:60px;height:60px;flex:none;display:flex;align-items:center;justify-content:center;position:relative}
+.q-fab-ic svg{width:27px;height:27px;stroke:#0c1202;stroke-width:2.1;fill:none}
+.q-fab-ic::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--lime);animation:qping 2.6s ease-out infinite}
+@keyframes qping{0%{transform:scale(1);opacity:.75}70%,100%{transform:scale(1.65);opacity:0}}
+.q-fab-tx{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;transition:max-width .45s cubic-bezier(.4,0,.2,1),opacity .3s,padding .45s;padding:0}
+.q-fab:hover .q-fab-tx,.q-fab.tease .q-fab-tx{max-width:230px;opacity:1;padding-right:24px}
+@media(max-width:860px){
+  .q-fab{height:54px;bottom:86px;right:18px;font-size:13px}
+  .q-fab-ic{width:54px;height:54px}
+  .q-fab-ic svg{width:24px;height:24px}
+  .q-fab:hover .q-fab-tx,.q-fab.tease .q-fab-tx{max-width:190px;padding-right:20px}
+}
+@media(max-width:860px){.wa-fab{right:18px;bottom:18px;width:54px;height:54px}.wa-fab svg{width:28px;height:28px}}
+@media (prefers-reduced-motion:reduce){.q-fab-ic::before{animation:none;opacity:0}}
+
 /* ============ QUOTE MODAL ============ */
 .qmask{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:18px}
 .qmask.open{display:flex}
@@ -377,6 +442,39 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
 .qdone .big{font-size:3rem;margin-bottom:14px}
 .qdone h3{font-size:1.5rem;margin-bottom:10px}
 .qdone p{color:var(--text-soft);margin-bottom:22px}
+
+/* ---- fork: quick vs advanced ---- */
+.qfork{display:none}
+.qmask.fork .qfork{display:block;animation:qin .35s cubic-bezier(.22,.8,.32,1)}
+.qmask.fork .qpane{display:none!important}
+.qmask.fork .qprog,.qmask.fork .qstep-label{display:none}
+.qfork h3{font-size:1.35rem;margin-bottom:6px}
+.qfork .qsub{color:var(--text-soft);font-size:.93rem;margin-bottom:22px}
+.qpick{display:grid;gap:14px}
+.qpick button{position:relative;text-align:left;border:2px solid var(--line-2);background:var(--card-2);border-radius:16px;padding:20px 22px;transition:all .2s;display:block;width:100%}
+.qpick button:hover{border-color:var(--lime);transform:translateY(-2px);box-shadow:0 10px 26px rgba(182,245,66,.16)}
+.qpick .qp-top{display:flex;align-items:center;gap:11px;margin-bottom:7px}
+.qpick .qp-ic{font-size:1.4rem;line-height:1}
+.qpick .qp-t{font-family:var(--font-d);font-weight:800;font-size:1.06rem}
+.qpick .qp-tag{margin-left:auto;font-size:.68rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 9px;border-radius:99px;
+  background:var(--lime-soft);color:var(--lime);border:1px solid rgba(182,245,66,.3)}
+.qpick .qp-tag.v{background:var(--violet-soft);color:var(--violet-lt);border-color:rgba(139,92,246,.34)}
+.qpick .qp-d{color:var(--text-soft);font-size:.9rem;line-height:1.5}
+.qpick .qp-d b{color:var(--text);font-weight:600}
+.qswitch{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);text-align:center;font-size:.84rem;color:var(--text-mute)}
+.qswitch button{color:var(--lime);font-weight:600;text-decoration:underline;text-underline-offset:3px;background:none;border:none;cursor:pointer;font-size:.84rem}
+.qswitch button:hover{color:var(--lime-deep)}
+.qswitch span{display:none}
+.qmask.m-quick .qswitch [data-sw="quick"]{display:inline}
+.qmask.m-adv .qswitch [data-sw="adv"]{display:inline}
+.qopts.one{grid-template-columns:1fr}
+.qopts.tri{grid-template-columns:repeat(3,1fr)}
+.qopts.tri .qopt{flex-direction:column;align-items:flex-start;gap:7px;padding:14px;font-size:.86rem}
+.qsw{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.qsw i{width:22px;height:22px;border-radius:7px;flex:none;border:1px solid rgba(255,255,255,.14)}
+.qhint{font-size:.8rem;color:var(--text-mute);margin:-8px 0 18px}
+.qfield.opt label:after{content:" — optional";color:var(--text-mute);font-weight:400;font-size:.8rem}
+@media(max-width:520px){.qopts.tri{grid-template-columns:1fr 1fr}}
 
 /* ============ SCROLL JOURNEY RAIL ============ */
 .sj-rail{position:fixed;left:14px;top:50%;transform:translateY(-50%);height:min(70vh,620px);width:44px;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
@@ -508,6 +606,37 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
   </div>
 </header>
 
+<!-- ============ LANDING PANEL — first thing every ad click sees ============ -->
+<section class="lp" id="top">
+  <div class="lp-img"><img src="hero-lp.jpg" alt="" fetchpriority="high" decoding="async" width="1376" height="768"></div>
+  <div class="lp-scrim"></div>
+  <div class="lp-glow"></div>
+  <div class="wrap">
+    <div class="lp-copy">
+      <div class="lp-eyebrow"><i></i> Web design &amp; AI · South Africa</div>
+      <h1>Your website should be your <em>best salesperson</em>.</h1>
+      <p class="lp-sub">We build fast, premium websites for South African businesses that turn visitors into WhatsApp enquiries — with quote tools, booking and AI answering built in.</p>
+      <ul class="lp-bullets">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Free quote in 60 seconds</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Free mockup of your site</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Live in 1–2 weeks</li>
+      </ul>
+      <div class="lp-cta">
+        <button class="btn btn-gold" data-quote>Get My Free Quote + Mockup →</button>
+        <a class="btn btn-line" href="#work">See our work</a>
+      </div>
+      <p class="lp-note">No call needed. No obligation. We build the mockup first — you only pay if you love it.</p>
+      <div class="lp-trust">
+        <div><span class="num">20+</span><span>Sites built</span></div>
+        <div><span class="num">1–2</span><span>Weeks to live</span></div>
+        <div><span class="num">24/7</span><span>AI call answering</span></div>
+        <div><span class="num">100%</span><span>Mobile-first</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="lp-cue">Scroll to see how we build<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+</section>
+
 <!-- ============ SCROLL WORLD 0 — THE BLUEPRINT ASSEMBLES ============ -->
 <section class="sw" data-sw="blueprint" style="--screens:3.4" aria-label="How a Lumework site is built">
   <div class="sw-stick">
@@ -542,7 +671,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
 </section>
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="top">
+<section class="hero" id="intro">
   <div class="ambient">
     <svg class="fa" style="top:8%;right:6%" width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity=".5"/></svg>
     <svg class="fb" style="top:52%;right:16%" width="70" height="70" viewBox="0 0 70 70"><rect x="8" y="8" width="54" height="54" rx="14" fill="none" stroke="#2f2f44" stroke-width="1.5"/></svg>
@@ -1282,7 +1411,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
       <div>
         <h4>Get in touch</h4>
         <a href="https://wa.me/27790227258" target="_blank" rel="noopener">WhatsApp: +27 79 022 7258</a>
-        <a href="mailto:debruynpw@gmail.com">debruynpw@gmail.com</a>
+        <a href="mailto:Pieter@trylumework.co.za">Pieter@trylumework.co.za</a>
         <a href="#" data-quote>Get a free quote</a>
       </div>
     </div>
@@ -1292,6 +1421,12 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
     </div>
   </div>
 </footer>
+
+<!-- ============ FLOATING QUOTE BUBBLE ============ -->
+<button class="q-fab" id="qFab" data-quote aria-label="Get a free quote and website mockup">
+  <span class="q-fab-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></span>
+  <span class="q-fab-tx">Free quote + mockup</span>
+</button>
 
 <!-- ============ FLOATING WHATSAPP ============ -->
 <a class="wa-fab" href="https://wa.me/27790227258?text=Hi%20Lumework!%20I'm%20interested%20in%20a%20website." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -1324,7 +1459,63 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
     </div>
     <div class="qbody">
 
-      <div class="qpane on" data-step="0">
+      <!-- ---- FORK: quick vs advanced ---- -->
+      <div class="qfork" id="qfork">
+        <h3>How much detail do you want to give us?</h3>
+        <p class="qsub">Either way you get a free quote and a free mockup of your site.</p>
+        <div class="qpick">
+          <button data-mode="quick">
+            <div class="qp-top"><span class="qp-ic">⚡</span><span class="qp-t">Quick setup</span><span class="qp-tag">60 seconds</span></div>
+            <p class="qp-d"><b>3 questions.</b> Your business, your look, your number. Enough for us to build your mockup and send a quote today.</p>
+          </button>
+          <button data-mode="adv">
+            <div class="qp-top"><span class="qp-ic">🎛️</span><span class="qp-t">Advanced setup</span><span class="qp-tag v">8 questions</span></div>
+            <p class="qp-d"><b>Full brief.</b> Services, integrations, goals and timeline — spec the site exactly how you want it and get a sharper quote.</p>
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- QUICK 1: business ---- -->
+      <div class="qpane" data-flow="quick" data-step="0">
+        <h3>Tell us about your business</h3>
+        <p class="qsub">Two things and we can start designing.</p>
+        <div class="qfield"><label for="qbizq">Business name</label><input id="qbizq" type="text" placeholder="e.g. Peter's Plumbing" autocomplete="organization"></div>
+        <label style="display:block;font-weight:600;font-size:.88rem;margin-bottom:9px">What industry?</label>
+        <div class="qopts tri noadv" data-key="industry">
+          <button class="qopt"><span class="qi">🔧</span> Trades &amp; services</button>
+          <button class="qopt"><span class="qi">🛡️</span> Security</button>
+          <button class="qopt"><span class="qi">🏪</span> Retail &amp; e-commerce</button>
+          <button class="qopt"><span class="qi">💼</span> Professional services</button>
+          <button class="qopt"><span class="qi">☕</span> Hospitality &amp; food</button>
+          <button class="qopt"><span class="qi">🏗️</span> Other</button>
+        </div>
+        <div class="qnav">
+          <button class="qback" data-back>← Back</button>
+          <button class="btn btn-gold btn-sm" data-next>Next →</button>
+        </div>
+      </div>
+
+      <!-- ---- QUICK 2: brand look ---- -->
+      <div class="qpane" data-flow="quick" data-step="1">
+        <h3>What should it look like?</h3>
+        <p class="qsub">Pick a direction — we'll nail the detail in the mockup.</p>
+        <div class="qopts noadv" data-key="vibe">
+          <button class="qopt" data-val="Bold &amp; dark"><span class="qsw"><i style="background:#0a0a0f"></i><i style="background:#b6f542"></i></span> Bold &amp; dark</button>
+          <button class="qopt" data-val="Light &amp; clean"><span class="qsw"><i style="background:#ffffff"></i><i style="background:#2563eb"></i></span> Light &amp; clean</button>
+          <button class="qopt" data-val="Premium &amp; luxe"><span class="qsw"><i style="background:#141414"></i><i style="background:#c8a24a"></i></span> Premium &amp; luxe</button>
+          <button class="qopt" data-val="Fun &amp; colourful"><span class="qsw"><i style="background:#ff6b4a"></i><i style="background:#ffd23f"></i></span> Fun &amp; colourful</button>
+        </div>
+        <div style="height:20px"></div>
+        <div class="qfield opt"><label for="qcolors">Your brand colours</label><input id="qcolors" type="text" placeholder="e.g. navy &amp; gold, or #1a2b4c"></div>
+        <p class="qhint">Have a logo, an old site or a Facebook page? Drop the link and we'll match it.</p>
+        <div class="qfield opt"><label for="qlink">Existing site or social link</label><input id="qlink" type="text" placeholder="facebook.com/yourbusiness"></div>
+        <div class="qnav">
+          <button class="qback" data-back>← Back</button>
+          <button class="btn btn-gold btn-sm" data-next>Next →</button>
+        </div>
+      </div>
+
+      <div class="qpane on" data-flow="adv" data-step="0">
         <h3>What do you need?</h3>
         <p class="qsub">Tap one — we'll move you straight along.</p>
         <div class="qopts" data-key="type">
@@ -1335,7 +1526,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
         </div>
       </div>
 
-      <div class="qpane" data-step="1">
+      <div class="qpane" data-flow="adv" data-step="1">
         <h3>What industry are you in?</h3>
         <p class="qsub">We've probably built for it already.</p>
         <div class="qopts" data-key="industry">
@@ -1348,7 +1539,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
         </div>
       </div>
 
-      <div class="qpane" data-step="2">
+      <div class="qpane" data-flow="adv" data-step="2">
         <h3>What vibe fits your brand?</h3>
         <p class="qsub">Gut feel is fine — we'll refine together.</p>
         <div class="qopts" data-key="vibe">
@@ -1359,7 +1550,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
         </div>
       </div>
 
-      <div class="qpane" data-step="3">
+      <div class="qpane" data-flow="adv" data-step="3">
         <h3>Which services do you want?</h3>
         <p class="qsub">Pick as many as you like.</p>
         <div class="qopts multi" data-key="services">
@@ -1380,7 +1571,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
         </div>
       </div>
 
-      <div class="qpane" data-step="4">
+      <div class="qpane" data-flow="adv" data-step="4">
         <h3>Any integrations?</h3>
         <p class="qsub">The tools that turn visitors into customers.</p>
         <div class="qopts multi" data-key="integrations">
@@ -1397,7 +1588,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
         </div>
       </div>
 
-      <div class="qpane" data-step="5">
+      <div class="qpane" data-flow="adv" data-step="5">
         <h3>What's the #1 goal?</h3>
         <p class="qsub">So we design around what matters most.</p>
         <div class="qopts" data-key="goal">
@@ -1408,7 +1599,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
         </div>
       </div>
 
-      <div class="qpane" data-step="6">
+      <div class="qpane" data-flow="adv" data-step="6">
         <h3>When do you want to launch?</h3>
         <p class="qsub">We'll plan the build around your timeline.</p>
         <div class="qopts" data-key="timeline">
@@ -1419,7 +1610,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
         </div>
       </div>
 
-      <div class="qpane" data-step="7">
+      <div class="qpane" data-flow="both" data-step="7">
         <h3>Where do we send your quote?</h3>
         <p class="qsub">We'll WhatsApp you a quote + free design concept.</p>
         <div class="qfield"><label for="qname">Your name</label><input id="qname" type="text" placeholder="e.g. Peter" autocomplete="name"></div>
@@ -1432,13 +1623,18 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
         </div>
       </div>
 
-      <div class="qpane" data-step="8">
+      <div class="qpane" data-flow="done" data-step="8">
         <div class="qdone">
           <div class="big">🎉</div>
           <h3>Brilliant — you're in!</h3>
           <p id="qdonemsg">Opening WhatsApp with your quote summary… We'll be in touch within a few hours with your free design concept.</p>
           <a class="btn btn-gold" id="qwa" href="#" target="_blank" rel="noopener">Open WhatsApp →</a>
         </div>
+      </div>
+
+      <div class="qswitch" id="qswitch" hidden>
+        <span data-sw="quick">Want to spec the whole site yourself? <button type="button" data-mode="adv">Switch to advanced setup →</button></span>
+        <span data-sw="adv">In a hurry? <button type="button" data-mode="quick">Switch to the 60-second version →</button></span>
       </div>
 
     </div>
@@ -1601,28 +1797,81 @@ mnav.addEventListener('click', function(ev){ if(ev.target.closest('a,button')) m
 
 /* ---------- QUOTE FLOW ---------- */
 var qmask = document.getElementById('qmask'),
-    panes = qmask.querySelectorAll('.qpane'),
+    panes = Array.prototype.slice.call(qmask.querySelectorAll('.qpane')),
     fill  = document.getElementById('qfill'),
     label = document.getElementById('qlabel'),
+    qtitle = qmask.querySelector('.qtitle'),
+    qswitch = document.getElementById('qswitch'),
+    contactPane = qmask.querySelector('.qpane[data-flow="both"]'),
+    donePane = qmask.querySelector('.qpane[data-flow="done"]'),
+    bizField = document.getElementById('qbiz').parentNode,
+    flow = [],
     TOTAL = 8,
     cur = 0,
+    MODE = 'adv',
     answers = {type:'',industry:'',vibe:'',services:[],integrations:[],goal:'',timeline:''};
 
+/* build the pane order for a mode: its own panes, then shared contact, then done */
+function setMode(m){
+  MODE = m;
+  flow = panes.filter(function(p){ return p.getAttribute('data-flow')===m; })
+              .sort(function(a,b){ return (+a.getAttribute('data-step')) - (+b.getAttribute('data-step')); });
+  flow.push(contactPane, donePane);
+  TOTAL = flow.length - 1;
+  qmask.classList.remove('fork','m-quick','m-adv');
+  qmask.classList.add('m-'+m);
+  qtitle.textContent = m==='quick' ? 'Quick setup' : 'Advanced setup';
+  /* quick already asked for the business name — don't ask twice */
+  bizField.style.display = (m==='quick') ? 'none' : '';
+  show(0);
+}
+function openFork(){
+  qmask.classList.add('fork');
+  qmask.classList.remove('m-quick','m-adv');
+  panes.forEach(function(p){ p.classList.remove('on'); });
+  qtitle.textContent = 'Your Free Quote';
+  qswitch.hidden = true;
+  qmask.querySelector('.qbox').scrollTop = 0;
+}
 function show(n){
   cur = n;
-  panes.forEach(function(p){ p.classList.toggle('on', parseInt(p.getAttribute('data-step'),10)===n); });
+  panes.forEach(function(p){ p.classList.remove('on'); });
+  flow[n].classList.add('on');
   var pct = Math.min(100, Math.round((n)/TOTAL*100));
   if(n>=TOTAL) pct = 100;
   fill.style.width = pct+'%';
   label.textContent = n>=TOTAL ? 'Done!' : 'Step '+(n+1)+' of '+TOTAL;
+  qswitch.hidden = (n>=TOTAL);
   qmask.querySelector('.qbox').scrollTop = 0;
 }
-function openQ(){ qmask.classList.add('open'); document.body.style.overflow='hidden'; show(0); }
+function openQ(){ qmask.classList.add('open'); document.body.style.overflow='hidden'; openFork(); }
 function closeQ(){ qmask.classList.remove('open'); document.body.style.overflow=''; }
+
+/* fork cards + the "switch to…" links */
+qmask.addEventListener('click', function(ev){
+  var m = ev.target.closest('[data-mode]');
+  if(m) setMode(m.getAttribute('data-mode'));
+});
 
 document.querySelectorAll('[data-quote]').forEach(function(b){
   b.addEventListener('click', function(ev){ ev.preventDefault(); openQ(); });
 });
+/* floating quote bubble — tease the label so it can't be ignored */
+(function(){
+  var fab = document.getElementById('qFab');
+  if(!fab) return;
+  var teased = 0;
+  function tease(ms){
+    if(qmask.classList.contains('open')) return;
+    fab.classList.add('tease');
+    setTimeout(function(){ fab.classList.remove('tease'); }, ms||4200);
+  }
+  setTimeout(function(){ tease(5000); }, 2200);           /* on arrival */
+  window.addEventListener('scroll', function(){
+    if(teased < 2 && window.scrollY > window.innerHeight * (teased + 1.2)){ teased++; tease(); }
+  }, {passive:true});
+})();
+
 document.getElementById('qclose').addEventListener('click', closeQ);
 qmask.addEventListener('click', function(ev){ if(ev.target===qmask) closeQ(); });
 document.addEventListener('keydown', function(ev){ if(ev.key==='Escape' && qmask.classList.contains('open')) closeQ(); });
@@ -1633,7 +1882,7 @@ qmask.querySelectorAll('.qopts').forEach(function(group){
       multi = group.classList.contains('multi');
   group.addEventListener('click', function(ev){
     var opt = ev.target.closest('.qopt'); if(!opt) return;
-    var val = opt.textContent.replace(/^\s*\S+\s/,'').trim(); /* strip emoji */
+    var val = opt.getAttribute('data-val') || opt.textContent.replace(/^\s*\S+\s/,'').trim(); /* strip emoji */
     if(multi){
       opt.classList.toggle('sel');
       var i = answers[key].indexOf(val);
@@ -1642,52 +1891,64 @@ qmask.querySelectorAll('.qopts').forEach(function(group){
       group.querySelectorAll('.qopt').forEach(function(o){ o.classList.remove('sel'); });
       opt.classList.add('sel');
       answers[key] = val;
-      setTimeout(function(){ show(cur+1); }, 320); /* auto-advance */
+      /* auto-advance only when the pane has nothing else on it */
+      if(!group.classList.contains('noadv')) setTimeout(function(){ show(cur+1); }, 320);
     }
   });
 });
 /* back / next */
 qmask.addEventListener('click', function(ev){
-  if(ev.target.closest('[data-back]')) show(Math.max(0,cur-1));
+  if(ev.target.closest('[data-back]')) { if(cur===0){ openFork(); } else { show(cur-1); } }
   if(ev.target.closest('[data-next]')) show(cur+1);
 });
 
 /* submit */
 document.getElementById('qsubmit').addEventListener('click', function(){
   var name  = document.getElementById('qname').value.trim(),
-      biz   = document.getElementById('qbiz').value.trim(),
+      biz   = document.getElementById('qbiz').value.trim() || document.getElementById('qbizq').value.trim(),
       email = document.getElementById('qemail').value.trim(),
-      phone = document.getElementById('qphone').value.trim();
+      phone = document.getElementById('qphone').value.trim(),
+      colors= document.getElementById('qcolors').value.trim(),
+      link  = document.getElementById('qlink').value.trim();
   if(!name || !phone){ alert('Please add at least your name and phone number 🙏'); return; }
 
   var lines = [
-    '*New Quote Request — Lumework*','',
+    '*New Quote Request — Lumework*',
+    '('+(MODE==='quick'?'Quick setup':'Advanced setup')+')','',
     '👤 Name: '+name,
     '🏢 Business: '+(biz||'—'),
     '📧 Email: '+(email||'—'),
     '📱 Phone: '+phone,'',
-    '🌐 Type: '+(answers.type||'—'),
     '🏭 Industry: '+(answers.industry||'—'),
-    '🎨 Vibe: '+(answers.vibe||'—'),
-    '🛠 Services: '+(answers.services.join(', ')||'—'),
-    '🔌 Integrations: '+(answers.integrations.join(', ')||'—'),
-    '🎯 Goal: '+(answers.goal||'—'),
-    '⏱ Timeline: '+(answers.timeline||'—')
+    '🎨 Vibe: '+(answers.vibe||'—')
   ];
+  if(MODE==='quick'){
+    lines.push('🌈 Brand colours: '+(colors||'—'));
+    lines.push('🔗 Existing site/social: '+(link||'—'));
+  }else{
+    lines.push(
+      '🌐 Type: '+(answers.type||'—'),
+      '🛠 Services: '+(answers.services.join(', ')||'—'),
+      '🔌 Integrations: '+(answers.integrations.join(', ')||'—'),
+      '🎯 Goal: '+(answers.goal||'—'),
+      '⏱ Timeline: '+(answers.timeline||'—')
+    );
+  }
   var msg = lines.join('\n');
   var waURL = 'https://wa.me/27790227258?text='+encodeURIComponent(msg);
   document.getElementById('qwa').href = waURL;
 
   /* email the lead via FormSubmit (AJAX; fire-and-forget) */
   try{
-    fetch('https://formsubmit.co/ajax/debruynpw@gmail.com',{
+    fetch('https://formsubmit.co/ajax/Pieter@trylumework.co.za',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
-        _subject:'🔥 New quote lead: '+name+(biz?' ('+biz+')':''),
+        _subject:'🔥 New quote lead ('+(MODE==='quick'?'quick':'advanced')+'): '+name+(biz?' ('+biz+')':''),
         _template:'table',
         _captcha:'false',
-        Name:name, Business:biz, Email:email, Phone:phone,
+        Mode:MODE, Name:name, Business:biz, Email:email, Phone:phone,
+        BrandColours:colors, ExistingLink:link,
         Type:answers.type, Industry:answers.industry, Vibe:answers.vibe,
         Services:answers.services.join(', '),
         Integrations:answers.integrations.join(', '),
@@ -1699,7 +1960,7 @@ document.getElementById('qsubmit').addEventListener('click', function(){
   /* Google Ads — Request quote conversion */
   try{ gtag('event','conversion',{'send_to':'AW-18351834383/ileWCJXgntccEI-K665E','value':100.0,'currency':'ZAR'}); }catch(e){}
 
-  show(8);
+  show(TOTAL);
   /* auto-open WhatsApp */
   setTimeout(function(){ window.open(waURL,'_blank'); }, 700);
 });
