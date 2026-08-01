@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18351834383"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18351834383');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free 5-Minute Website Teardown — Lumework</title>
+<meta name="description" content="Send us your website link on WhatsApp. Get back a personal 5-minute video showing exactly why it isn't bringing you customers. Free, no pitch, no call.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://lumework.studio/lp-c-teardown.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%238b5cf6'/><stop offset='1' stop-color='%236d28d9'/></linearGradient></defs><rect width='64' height='64' rx='17' fill='url(%23g)'/><path d='M20 16h11v22h13v10H20z' fill='%23b6f542'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#f6f5f1; --paper2:#eceae3; --card:#fff; --ink:#12131a; --ink2:#3a3d4a; --ink3:#6f7383;
+  --rule:#dedbd2; --rule2:#c9c5b8;
+  --violet:#6d28d9; --violet-lt:#8b5cf6; --violet-soft:rgba(109,40,217,.07);
+  --lime:#6fa310; --lime-bright:#b6f542; --lime-soft:rgba(111,163,16,.1);
+  --red:#c0392b; --red-soft:rgba(192,57,43,.07);
+  --wa:#25d366;
+  --fd:'Sora',system-ui,sans-serif; --fb:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:78px}
+h1,h2,h3{font-family:var(--fd);line-height:1.12;letter-spacing:-.025em;font-weight:800}
+img{max-width:100%;display:block}
+.wrap{width:min(1060px,92vw);margin-inline:auto}
+.narrow{width:min(760px,92vw);margin-inline:auto}
+.sect{padding:clamp(52px,7.5vw,96px) 0}
+.eyebrow{font-family:var(--fd);font-weight:700;font-size:.73rem;letter-spacing:.17em;text-transform:uppercase;color:var(--violet);margin-bottom:13px}
+
+/* ---------- dark hero block on a light page ---------- */
+.hero{position:relative;background:#08090d;color:#f4f5f8;overflow:hidden;padding:clamp(74px,10vw,110px) 0 clamp(56px,8vw,86px)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.42;object-position:center 40%}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,9,13,.9),rgba(8,9,13,.72) 45%,rgba(8,9,13,.96))}
+.hero .wrap{position:relative;z-index:2}
+.brandline{display:flex;align-items:center;justify-content:space-between;margin-bottom:clamp(38px,6vw,64px)}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-weight:800;font-size:1.06rem;color:#f4f5f8}
+.logo i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--violet-lt),#6d28d9);display:grid;place-items:center;font-style:normal;font-size:.78rem;color:var(--lime-bright);font-weight:800}
+.brandline .free{font-family:var(--fd);font-weight:700;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lime-bright)}
+.hero-in{max-width:720px}
+.tag{display:inline-flex;align-items:center;gap:9px;background:rgba(182,245,66,.12);border:1px solid rgba(182,245,66,.32);color:var(--lime-bright);font-family:var(--fd);font-weight:700;font-size:.76rem;padding:8px 15px;border-radius:99px;margin-bottom:22px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--lime-bright);box-shadow:0 0 0 0 rgba(182,245,66,.7);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 11px rgba(182,245,66,0)}100%{box-shadow:0 0 0 0 rgba(182,245,66,0)}}
+.hero h1{font-size:clamp(33px,5.8vw,64px);margin-bottom:18px;color:#fff}
+.hero h1 em{font-style:normal;color:var(--lime-bright)}
+.hero .sub{font-size:clamp(1rem,1.85vw,1.24rem);color:#b4b8c6;max-width:580px;margin-bottom:28px}
+.hero .micro{font-size:.83rem;color:#787e8e;margin-top:16px;display:flex;flex-wrap:wrap;gap:6px 16px}
+
+.ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--fd);font-weight:700;border-radius:12px;text-decoration:none;transition:transform .22s cubic-bezier(.22,.8,.32,1),box-shadow .22s;border:none;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#04240f;padding:17px 30px;font-size:1.02rem;box-shadow:0 10px 30px rgba(37,211,102,.28)}
+.btn-wa:hover{box-shadow:0 14px 38px rgba(37,211,102,.42)}
+.btn-dk{background:transparent;color:#f4f5f8;border:1px solid #2b2f3b;padding:16px 25px;font-size:.95rem}
+.btn-dk:hover{border-color:var(--lime-bright);color:var(--lime-bright)}
+
+/* ---------- what you get ---------- */
+.gets{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.get{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:24px 22px;transition:.3s}
+.get:hover{border-color:var(--rule2);transform:translateY(-3px);box-shadow:0 10px 30px rgba(20,20,25,.06)}
+.get .n{font-family:var(--fd);font-weight:800;font-size:.75rem;letter-spacing:.1em;color:var(--violet);margin-bottom:12px}
+.get h3{font-size:1.06rem;margin-bottom:7px}
+.get p{color:var(--ink2);font-size:.93rem}
+
+.h2c{text-align:center;max-width:660px;margin:0 auto clamp(36px,5vw,56px)}
+.h2c h2{font-size:clamp(1.65rem,3.9vw,2.6rem);margin-bottom:13px}
+.h2c p{color:var(--ink2);font-size:1.01rem}
+
+/* ---------- the findings list (editorial) ---------- */
+.finds{border-top:1px solid var(--rule)}
+.find{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.find .fi{flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:var(--red-soft);color:var(--red);display:grid;place-items:center;font-size:1.05rem;font-weight:800}
+.find h3{font-size:1.04rem;margin-bottom:5px}
+.find p{color:var(--ink2);font-size:.94rem}
+.find .cost{display:inline-block;margin-top:7px;font-family:var(--fd);font-weight:700;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--red)}
+
+/* ---------- how ---------- */
+.rail{position:relative;display:grid;gap:0}
+.rail .rr{display:flex;gap:20px;padding:22px 0;align-items:flex-start;position:relative}
+.rail .rr:not(:last-child)::before{content:'';position:absolute;left:20px;top:52px;bottom:-6px;width:1px;background:var(--rule2)}
+.rail .rn{flex:0 0 41px;width:41px;height:41px;border-radius:50%;background:var(--ink);color:var(--lime-bright);display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:.9rem;position:relative;z-index:1}
+.rail h3{font-size:1.08rem;margin-bottom:6px}
+.rail p{color:var(--ink2);font-size:.95rem}
+.rail .tm{display:block;margin-top:6px;font-family:var(--fd);font-weight:700;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+
+/* ---------- pitch-free promise ---------- */
+.promise{background:var(--card);border:1px solid var(--rule);border-radius:22px;padding:clamp(26px,4vw,44px);text-align:center;position:relative}
+.promise::before{content:'';position:absolute;inset:0;border-radius:22px;border:1px dashed rgba(109,40,217,.3);margin:9px;pointer-events:none}
+.promise h2{font-size:clamp(1.5rem,3.3vw,2.15rem);margin-bottom:14px}
+.promise p{color:var(--ink2);font-size:1.02rem;max-width:600px;margin:0 auto 12px}
+.promise .sig{margin-top:22px;font-family:var(--fd);font-weight:700;font-size:.94rem;color:var(--ink)}
+.promise .sig small{display:block;font-family:var(--fb);font-weight:400;font-size:.83rem;color:var(--ink3);margin-top:3px}
+
+/* ---------- faq ---------- */
+.fq{border-bottom:1px solid var(--rule)}
+.fq summary{font-family:var(--fd);font-weight:600;font-size:1rem;padding:17px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:'+';color:var(--violet);font-size:1.35rem;font-weight:300;transition:.25s;line-height:1}
+.fq[open] summary::after{transform:rotate(45deg)}
+.fq p{color:var(--ink2);font-size:.95rem;padding-bottom:19px}
+
+/* ---------- final (dark bookend) ---------- */
+.final{background:#08090d;color:#f4f5f8;text-align:center;padding:clamp(56px,8vw,100px) 0}
+.final h2{font-size:clamp(1.8rem,4.4vw,2.9rem);margin-bottom:15px;color:#fff}
+.final p{color:#b4b8c6;font-size:1.03rem;max-width:520px;margin:0 auto 28px}
+.final .ctas{justify-content:center}
+.final .micro{font-size:.83rem;color:#787e8e;margin-top:16px}
+
+footer{background:#08090d;border-top:1px solid #1f222c;padding:26px 0;text-align:center;color:#787e8e;font-size:.85rem}
+footer a{color:#b4b8c6;text-decoration:none}
+
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(246,245,241,.95);backdrop-filter:blur(14px);border-top:1px solid var(--rule2);padding:11px 0;transform:translateY(110%);transition:transform .35s cubic-bezier(.22,.8,.32,1)}
+.sticky.on{transform:none}
+.sticky .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.sticky .sl{font-family:var(--fd);font-weight:700;font-size:.92rem;line-height:1.25;color:var(--ink)}
+.sticky .sl small{display:block;font-family:var(--fb);font-weight:400;font-size:.76rem;color:var(--ink3)}
+.sticky .btn-wa{padding:13px 22px;font-size:.93rem;flex:0 0 auto}
+@media(max-width:560px){.sticky .sl{display:none}.sticky .btn-wa{width:100%}}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero">
+  <div class="hero-bg"><img src="hero-c.jpg" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="brandline">
+      <div class="logo"><i>L</i> Lumework</div>
+      <div class="free">Free · No pitch</div>
+    </div>
+    <div class="hero-in">
+      <span class="tag"><span class="dot"></span> 4 teardown slots left this week</span>
+      <h1>Send us your website.<br>We'll tell you <em>exactly</em> why it's not working.</h1>
+      <p class="sub">One WhatsApp with your link. Within 24 hours you get back a personal 5-minute video — us clicking through your site, on camera, pointing at the specific things costing you customers. No slide deck. No sales call. No catch.</p>
+      <div class="ctas">
+        <a class="btn btn-wa" data-wa="Hi Lumework — I'd like the free 5-minute teardown. My website is: " href="#">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2"/></svg>
+          Get my free teardown
+        </a>
+        <a class="btn btn-dk" href="#inside">See what's inside</a>
+      </div>
+      <p class="micro"><span>⏱️ Video back within 24 hours</span><span>🚫 No call booked, ever</span><span>💬 Don't have a site? Send a competitor's.</span></p>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ WHAT YOU GET ═══════════ -->
+<section class="sect" id="inside">
+  <div class="wrap">
+    <div class="h2c rv">
+      <p class="eyebrow">What lands in your WhatsApp</p>
+      <h2>A real video. Made for your site only.</h2>
+      <p>Not an automated PDF report. Not a "score out of 100." A human recording their screen while going through your actual website.</p>
+    </div>
+    <div class="gets">
+      <div class="get rv"><div class="n">01</div><h3>The 5-second test</h3><p>We open your site cold, like a stranger would. Can you tell what the business does and what to do next? Most sites fail this in the first five seconds.</p></div>
+      <div class="get rv"><div class="n">02</div><h3>The phone check</h3><p>Roughly 8 in 10 of your visitors are on a phone. We go through your site on one, on mobile data, and show you what they actually see.</p></div>
+      <div class="get rv"><div class="n">03</div><h3>The leak list</h3><p>Every specific point where a ready-to-buy visitor gives up and leaves — ranked by how much it's likely costing you.</p></div>
+      <div class="get rv"><div class="n">04</div><h3>Your Google position</h3><p>Whether you show up for what people actually search in your area, and whether AI assistants can even find you.</p></div>
+      <div class="get rv"><div class="n">05</div><h3>What a competitor does better</h3><p>We pull up a rival in your area and show you, side by side, what they're doing to win the enquiry you're losing.</p></div>
+      <div class="get rv"><div class="n">06</div><h3>The three-thing fix list</h3><p>The three changes with the biggest effect — explained plainly enough that you or any developer can action them. Yours to keep either way.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHAT WE USUALLY FIND ═══════════ -->
+<section class="sect" style="background:var(--paper2)">
+  <div class="narrow">
+    <div class="h2c rv" style="margin-bottom:34px">
+      <p class="eyebrow">Pattern recognition</p>
+      <h2>What we find on nearly every site.</h2>
+      <p>After enough of these, the same handful of problems show up again and again.</p>
+    </div>
+    <div class="finds rv">
+      <div class="find"><div class="fi">1</div><div><h3>The visitor can't tell what you do</h3><p>Headlines like "Welcome to our website" or "Excellence in service since 2011." A stranger has to work out your business from context — and most won't bother.</p><span class="cost">Loses the majority of first-time visitors</span></div></div>
+      <div class="find"><div class="fi">2</div><div><h3>No obvious next step</h3><p>An email address buried in the footer isn't a call to action. If someone wants to hire you at 9pm on a Sunday, there's nothing for them to press.</p><span class="cost">Kills the ready-to-buy visitor</span></div></div>
+      <div class="find"><div class="fi">3</div><div><h3>Painful on a phone</h3><p>Text you have to pinch to read, buttons too small for a thumb, images that take eight seconds to load on mobile data.</p><span class="cost">Loses your biggest traffic group</span></div></div>
+      <div class="find"><div class="fi">4</div><div><h3>Contact form, not conversation</h3><p>South Africans message. A form that promises a reply "within 48 hours" is asking someone to wait two days for a job they want done now.</p><span class="cost">Most enquiries never get sent</span></div></div>
+      <div class="find"><div class="fi">5</div><div><h3>Invisible in local search</h3><p>No location signals, no Google Business setup, no structure for AI assistants to read. You exist, but only for people who already know your name.</p><span class="cost">Zero new discovery</span></div></div>
+      <div class="find"><div class="fi">6</div><div><h3>Nothing that says "trust me"</h3><p>No reviews, no real photos of real work, no named human. Every hesitant buyer is looking for a reason to believe you, and finds none.</p><span class="cost">The quiet deal-killer</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HOW ═══════════ -->
+<section class="sect">
+  <div class="narrow">
+    <div class="h2c rv"><p class="eyebrow">The whole process</p><h2>Three steps. About two minutes of your time.</h2></div>
+    <div class="rail rv">
+      <div class="rr"><div class="rn">1</div><div><h3>Send your link on WhatsApp</h3><p>Just the URL. If you don't have a website yet, send a competitor's — we'll tear that one apart instead and you'll learn more from it.</p><span class="tm">Takes 30 seconds</span></div></div>
+      <div class="rr"><div class="rn">2</div><div><h3>We record it</h3><p>A real person goes through your site on desktop and phone, recording as they go, marking every leak.</p><span class="tm">Back within 24 hours</span></div></div>
+      <div class="rr"><div class="rn">3</div><div><h3>You watch it and do what you like</h3><p>Fix it yourself. Send it to your current developer. Ignore it entirely. Or ask us what a rebuild would look like — but only if you ask first.</p><span class="tm">Entirely your call</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PROMISE ═══════════ -->
+<section class="sect" style="background:var(--paper2)">
+  <div class="narrow">
+    <div class="promise rv">
+      <p class="eyebrow">The no-pitch promise</p>
+      <h2>We will not chase you.</h2>
+      <p>You'll get the video. That's it. No follow-up sequence, no "just circling back," no phone call you didn't ask for.</p>
+      <p>If you want to talk about us building it, you message us. Until then we'll leave you alone — and the fix list is yours whether you ever hire us or not.</p>
+      <div class="sig">— Pieter, Lumework<small>Cape Town · I record these myself</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="sect">
+  <div class="narrow">
+    <div class="h2c rv"><p class="eyebrow">Reasonable questions</p><h2>Yes, it's really free.</h2></div>
+    <div class="rv">
+      <details class="fq"><summary>Why would you do this for nothing?</summary><p>Because it's the most honest advert we have. If the video is genuinely useful, some people come back and ask us to build the thing. Most don't, and that's fine — we'd rather be the ones who gave you something useful than the ones who cold-called you.</p></details>
+      <details class="fq"><summary>Will I get sales calls afterwards?</summary><p>No. You'll get the video and nothing else unless you reply. We don't run follow-up sequences on teardowns.</p></details>
+      <details class="fq"><summary>How much does a website cost with you?</summary><p>Depends completely on what it has to do — a one-page trade site and a site with quoting, booking and a customer database are different jobs. Ask on WhatsApp and you'll get a real number in that conversation. Nothing on this page is trying to sell you one.</p></details>
+      <details class="fq"><summary>I don't have a website at all.</summary><p>Even better. Send a competitor's link. You'll see exactly what you're up against and where the gap is — that's more useful than a teardown of a site that doesn't exist yet.</p></details>
+      <details class="fq"><summary>Is my site's information safe?</summary><p>We only look at pages that are already public. Nothing you send is shared, published, or used as an example without you saying yes first.</p></details>
+      <details class="fq"><summary>How long does the video take to arrive?</summary><p>Usually within 24 hours. If we're backed up we'll tell you straight away rather than leaving you waiting.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FINAL ═══════════ -->
+<section class="final">
+  <div class="wrap">
+    <h2 class="rv">Worst case, you get a free video<br>telling you what to fix.</h2>
+    <p class="rv">There is no version of this where you lose. Send the link.</p>
+    <div class="ctas rv">
+      <a class="btn btn-wa" data-wa="Hi Lumework — I'd like the free 5-minute teardown. My website is: " href="#">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2"/></svg>
+        Send my link on WhatsApp
+      </a>
+    </div>
+    <p class="micro rv">Free · No call · No follow-up unless you ask</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Lumework · Cape Town, South Africa · <a href="https://wa.me/27790227258">+27 79 022 7258</a> · <a href="privacy.html">Privacy</a></div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="wrap">
+    <div class="sl">Free 5-minute teardown<small>Send your link. Video back in 24 hours.</small></div>
+    <a class="btn btn-wa" data-wa="Hi Lumework — I'd like the free 5-minute teardown. My website is: " href="#">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2"/></svg>
+      Get it free
+    </a>
+  </div>
+</div>
+
+<script>
+var WA_NUM='27790227258';
+document.querySelectorAll('[data-wa]').forEach(function(a){
+  a.href='https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(a.getAttribute('data-wa'));
+  a.target='_blank'; a.rel='noopener';
+});
+
+/* Quality-gated Google Ads conversion: 20s on page AND 20% scrolled */
+var t0=Date.now(), deepest=0;
+addEventListener('scroll',function(){
+  var d=(scrollY+innerHeight)/document.body.scrollHeight;
+  if(d>deepest) deepest=d;
+},{passive:true});
+document.addEventListener('click',function(e){
+  var a=e.target.closest && e.target.closest('a[href*="wa.me"]');
+  if(!a) return;
+  if(!((Date.now()-t0)>=20000 && deepest>=0.20)) return;
+  try{gtag('event','conversion',{'send_to':'AW-18351834383/hizCCN_ch9ccEI-K665E','value':50.0,'currency':'ZAR'});}catch(err){}
+},true);
+
+var sticky=document.getElementById('sticky');
+addEventListener('scroll',function(){ sticky.classList.toggle('on', scrollY>560); },{passive:true});
+
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+},{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
