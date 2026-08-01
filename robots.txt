@@ -39,4 +39,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://lumework.studio/sitemap.xml
+Sitemap: https://www.lumework.studio/sitemap.xml

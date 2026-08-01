@@ -13,18 +13,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- ═══════════════════════════════════════════════════════════════════
      SEO SWAP BLOCK — when you buy the domain + rename, change these 3:
-       1. Find/replace  https://lumework.studio   →  https://YOURNEWDOMAIN.co.za   (whole file)
+       1. Find/replace  https://www.lumework.studio   →  https://YOURNEWDOMAIN.co.za   (whole file)
        2. Find/replace  Lumework                      →  Your New Name                 (whole file)
        3. Update the founder name in the JSON-LD below (currently "PW de Bruyn")
      Everything else (schema, OG, robots, sitemap) then just works.
      ═══════════════════════════════════════════════════════════════════ -->
 <title>Web Design South Africa | Affordable Small-Business Websites — Lumework</title>
-<meta name="description" content="Affordable web design for South African small businesses & trades. We build fast, SEO-ready websites that turn visitors into WhatsApp enquiries — quote tools, booking, CRM built in. Free quote in 60 seconds.">
+<meta name="description" content="Affordable web design for South African small businesses and trades. Fast, SEO-ready sites that turn visitors into WhatsApp enquiries. Free 60-second quote.">
 <meta name="keywords" content="web design south africa, web design cape town, affordable website small business, website designer cape town, web design for tradesmen, whatsapp website, small business website south africa, ai solutions cape town, ai automation for business, ai chatbot for website, ai agency south africa, custom ai tools for business">
 <meta name="author" content="Lumework">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://lumework.studio/">
-<link rel="alternate" type="application/rss+xml" title="Lumework Blog" href="https://lumework.studio/blog/rss.xml">
+<link rel="canonical" href="https://www.lumework.studio/">
+<link rel="alternate" type="application/rss+xml" title="Lumework Blog" href="https://www.lumework.studio/blog/rss.xml">
 <meta name="geo.region" content="ZA">
 <meta name="geo.placename" content="South Africa">
 
@@ -33,15 +33,15 @@
 <meta property="og:site_name" content="Lumework">
 <meta property="og:title" content="Web Design South Africa | Websites That Win You Customers">
 <meta property="og:description" content="Affordable, fast, SEO-ready websites for South African small businesses that turn visitors into WhatsApp enquiries. Free quote in 60 seconds.">
-<meta property="og:url" content="https://lumework.studio/">
+<meta property="og:url" content="https://www.lumework.studio/">
 <meta property="og:locale" content="en_ZA">
-<meta property="og:image" content="https://lumework.studio/og-cover.png">
+<meta property="og:image" content="https://www.lumework.studio/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Web Design South Africa — Lumework">
 <meta name="twitter:description" content="Affordable websites for South African businesses that turn visitors into WhatsApp leads.">
-<meta name="twitter:image" content="https://lumework.studio/og-cover.png">
+<meta name="twitter:image" content="https://www.lumework.studio/og-cover.png">
 
 <!-- ═══ STRUCTURED DATA (this is what AI engines + Google read) ═══ -->
 <script type="application/ld+json">
@@ -50,16 +50,38 @@
   "@graph": [
     {
       "@type": ["ProfessionalService","WebDesignBusiness"],
-      "@id": "https://lumework.studio/#business",
+      "@id": "https://www.lumework.studio/#business",
       "name": "Lumework",
       "description": "Affordable web design agency for South African small businesses and trades. Builds fast, SEO-ready websites with WhatsApp lead capture, quote tools, booking systems and CRM automation.",
-      "url": "https://lumework.studio/",
+      "url": "https://www.lumework.studio/",
       "telephone": "+27-79-022-7258",
       "email": "pieter@trylumework.com",
       "areaServed": { "@type": "Country", "name": "South Africa" },
       "address": { "@type": "PostalAddress", "addressCountry": "ZA" },
-      "founder": { "@type": "Person", "name": "PW de Bruyn" },
-      "sameAs": [],
+      "founder": { "@id": "https://www.lumework.studio/#founder" },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.lumework.studio/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://www.lumework.studio/og-cover.png",
+      "knowsAbout": [
+        "Web design",
+        "Local SEO",
+        "Google Business Profile optimisation",
+        "Schema.org structured data",
+        "WhatsApp lead capture",
+        "Website performance optimisation"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+27-79-022-7258",
+        "email": "pieter@trylumework.com",
+        "areaServed": "ZA",
+        "availableLanguage": ["en", "af"]
+      },
       "makesOffer": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Design", "description": "Premium mobile-first business websites." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO", "description": "Local SEO to rank in South African search results." } },
@@ -68,16 +90,35 @@
       ]
     },
     {
+      "@type": "Person",
+      "@id": "https://www.lumework.studio/#founder",
+      "name": "PW de Bruyn",
+      "jobTitle": "Founder",
+      "worksFor": { "@id": "https://www.lumework.studio/#business" },
+      "url": "https://www.lumework.studio/",
+      "knowsAbout": ["Web design", "Local SEO", "Conversion-focused websites"]
+    },
+    {
       "@type": "WebSite",
-      "@id": "https://lumework.studio/#website",
-      "url": "https://lumework.studio/",
+      "@id": "https://www.lumework.studio/#website",
+      "url": "https://www.lumework.studio/",
       "name": "Lumework",
-      "publisher": { "@id": "https://lumework.studio/#business" },
+      "publisher": { "@id": "https://www.lumework.studio/#business" },
+      "inLanguage": "en-ZA"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.lumework.studio/#webpage",
+      "url": "https://www.lumework.studio/",
+      "name": "Web Design South Africa | Affordable Small-Business Websites — Lumework",
+      "isPartOf": { "@id": "https://www.lumework.studio/#website" },
+      "about": { "@id": "https://www.lumework.studio/#business" },
+      "primaryImageOfPage": "https://www.lumework.studio/og-cover.png",
       "inLanguage": "en-ZA"
     },
     {
       "@type": "FAQPage",
-      "@id": "https://lumework.studio/#faq",
+      "@id": "https://www.lumework.studio/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -104,10 +145,25 @@
   ]
 }
 </script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238b5cf6'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='bold' text-anchor='middle' fill='%23b6f542'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%238b5cf6'/><stop offset='1' stop-color='%236d28d9'/></linearGradient></defs><rect width='64' height='64' rx='17' fill='url(%23g)'/><path d='M20 16h11v22h13v10H20z' fill='%23b6f542'/></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0b0b12">
+<link rel="preload" as="image" href="hero-lp.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking first paint; display=swap already prevents invisible text. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript></noscript>
+<!-- Prefetch the pages people actually go to next; prerender on hover intent. -->
+<script type="speculationrules">
+{
+  "prefetch": [{ "source": "document", "where": { "href_matches": "/*" }, "eagerness": "moderate" }],
+  "prerender": [{ "source": "list", "urls": ["/for/", "/blog/"] }]
+}
+</script>
 <script>document.documentElement.classList.add('js');</script>
 <style>
 /* ============ RESET / TOKENS ============ */
@@ -190,9 +246,9 @@ section{position:relative}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--violet-soft);border:1px solid rgba(139,92,246,.35);color:var(--violet-lt);font-weight:700;font-size:.82rem;padding:7px 16px;border-radius:999px;letter-spacing:.03em;text-transform:uppercase}
 .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:.6}}
-.hero h1{font-size:clamp(2.4rem,5.6vw,4.1rem);font-weight:800;margin:26px 0 20px;max-width:820px}
-.hero h1 .hl{position:relative;white-space:nowrap;color:var(--violet-lt)}
-.hero h1 .hl svg{position:absolute;left:0;bottom:-6px;width:100%;height:14px}
+.hero h1,.hero .h1-style{font-size:clamp(2.4rem,5.6vw,4.1rem);font-weight:800;margin:26px 0 20px;max-width:820px}
+.hero h1 .hl,.hero .h1-style .hl{position:relative;white-space:nowrap;color:var(--violet-lt)}
+.hero h1 .hl svg,.hero .h1-style .hl svg{position:absolute;left:0;bottom:-6px;width:100%;height:14px}
 .hero p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--text-soft);max-width:640px;margin-bottom:36px}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
 .hero-proof{display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;color:var(--text-mute);font-size:.9rem;font-weight:500}
@@ -345,6 +401,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
 /* ============ LANDING PANEL (ad entry point) ============ */
 .lp{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:var(--bg);padding:clamp(96px,12vh,140px) 0 clamp(40px,7vh,80px)}
 .lp-img{position:absolute;inset:0;z-index:0}
+.lp-img picture{display:block;width:100%;height:100%}
 .lp-img img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
 .lp-scrim{position:absolute;inset:0;z-index:1;
   background:linear-gradient(90deg,rgba(10,10,15,.96) 0%,rgba(10,10,15,.86) 38%,rgba(10,10,15,.42) 72%,rgba(10,10,15,.6) 100%)}
@@ -531,8 +588,8 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
   .tend{padding:36px 20px}
 }
 @media (max-width:380px){
-  .hero h1 .hl{white-space:normal}
-  .hero h1 .hl svg{display:none}
+  .hero h1 .hl,.hero .h1-style .hl{white-space:normal}
+  .hero h1 .hl svg,.hero .h1-style .hl svg{display:none}
 }
 
 /* ============ SCROLL WORLDS (canvas set-pieces) ============ */
@@ -608,7 +665,10 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
 
 <!-- ============ LANDING PANEL — first thing every ad click sees ============ -->
 <section class="lp" id="top">
-  <div class="lp-img"><img src="hero-lp.jpg" alt="" fetchpriority="high" decoding="async" width="1376" height="768"></div>
+  <div class="lp-img"><picture>
+    <source srcset="hero-lp.webp" type="image/webp">
+    <img src="hero-lp.jpg" alt="" fetchpriority="high" decoding="async" width="1376" height="768">
+  </picture></div>
   <div class="lp-scrim"></div>
   <div class="lp-glow"></div>
   <div class="wrap">
@@ -681,7 +741,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);color:var(--text-so
   </div>
   <div class="wrap">
     <span class="eyebrow reveal"><span class="dot"></span> Websites that pay for themselves</span>
-    <h1 class="reveal">Your website should be your <span class="hl">best salesperson<svg viewBox="0 0 300 14" preserveAspectRatio="none"><path class="draw" d="M4 10 Q 75 2 150 8 T 296 6" fill="none" stroke="#b6f542" stroke-width="5" stroke-linecap="round"/></svg></span>.</h1>
+    <h2 class="reveal h1-style">Your website should be your <span class="hl">best salesperson<svg viewBox="0 0 300 14" preserveAspectRatio="none"><path class="draw" d="M4 10 Q 75 2 150 8 T 296 6" fill="none" stroke="#b6f542" stroke-width="5" stroke-linecap="round"/></svg></span>.</h2>
     <p class="lead reveal">We build premium websites for South African businesses that turn visitors into WhatsApp enquiries — with built-in quote tools, booking systems and CRMs that work while you sleep.</p>
     <div class="hero-ctas reveal">
       <button class="btn btn-gold" data-quote>Get My Free Quote →</button>

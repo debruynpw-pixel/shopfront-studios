@@ -28,41 +28,42 @@ Also serves US-based trades and contractors on a selective basis.
 
 ## Key pages
 
-- [Home](https://lumework.studio/): Services, portfolio, and a 60-second quote tool.
-- [Industries](https://lumework.studio/for/): What each industry's website actually needs, by sector.
-- [Blog](https://lumework.studio/blog/): Practical guides on web design costs, local SEO, and getting found online in South Africa.
-- [Privacy Policy](https://lumework.studio/privacy.html): POPIA-compliant data handling.
+- [Home](https://www.lumework.studio/): Services, portfolio, and a 60-second quote tool.
+- [Industries](https://www.lumework.studio/for/): What each industry's website actually needs, by sector.
+- [Blog](https://www.lumework.studio/blog/): Practical guides on web design costs, local SEO, and getting found online in South Africa.
+- [Web design in Cape Town](https://www.lumework.studio/lp-webdesign-cpt.html): What a Cape Town business gets, and how the free-demo-first process works.
+- [Privacy Policy](https://www.lumework.studio/privacy.html): POPIA-compliant data handling.
 
 ## Industries served
 
 Each page below covers how that industry's customers actually decide, and what
 the website must do to win the enquiry.
 
-- [Law firms and attorneys](https://lumework.studio/for/attorneys.html): Practice-area pages, attorney bios, plain-language process explanations.
-- [Accountants and bookkeepers](https://lumework.studio/for/accountants.html): Service pages per offering, professional body registration, secure document handling.
-- [Auto repair and panel beaters](https://lumework.studio/for/auto-repair.html): Makes serviced, insurance-approved status, real job photography.
-- [Tyre shops and fitment centres](https://lumework.studio/for/tyre-shops.html): Enquiry by tyre size, brands stocked, per-branch pages.
-- [Salons, barbers and beauty studios](https://lumework.studio/for/salons.html): Online booking, galleries of real work, per-stylist profiles.
-- [Gyms and fitness studios](https://lumework.studio/for/gyms.html): Current class timetables, free-trial capture, transparent contract terms.
-- [Optometrists](https://lumework.studio/for/optometrists.html): Medical aid schemes accepted, online booking, eye test explained.
-- [Dental practices](https://lumework.studio/for/dentists.html): Emergency appointment path, medical aid clarity, anxiety-aware copy.
-- [Veterinary practices](https://lumework.studio/for/vets.html): After-hours emergency contact, team bios, repeat script ordering.
-- [Restaurants and takeaways](https://lumework.studio/for/restaurants.html): HTML menus rather than PDFs, live hours, direct booking and ordering.
-- [Electricians](https://lumework.studio/for/electricians.html): COC certificates, inverter and solar backup, named service suburbs.
-- [Plumbers](https://lumework.studio/for/plumbers.html): Emergency-first layout, geyser replacement, PIRB registration.
+- [Law firms and attorneys](https://www.lumework.studio/for/attorneys.html): Practice-area pages, attorney bios, plain-language process explanations.
+- [Accountants and bookkeepers](https://www.lumework.studio/for/accountants.html): Service pages per offering, professional body registration, secure document handling.
+- [Auto repair and panel beaters](https://www.lumework.studio/for/auto-repair.html): Makes serviced, insurance-approved status, real job photography.
+- [Tyre shops and fitment centres](https://www.lumework.studio/for/tyre-shops.html): Enquiry by tyre size, brands stocked, per-branch pages.
+- [Salons, barbers and beauty studios](https://www.lumework.studio/for/salons.html): Online booking, galleries of real work, per-stylist profiles.
+- [Gyms and fitness studios](https://www.lumework.studio/for/gyms.html): Current class timetables, free-trial capture, transparent contract terms.
+- [Optometrists](https://www.lumework.studio/for/optometrists.html): Medical aid schemes accepted, online booking, eye test explained.
+- [Dental practices](https://www.lumework.studio/for/dentists.html): Emergency appointment path, medical aid clarity, anxiety-aware copy.
+- [Veterinary practices](https://www.lumework.studio/for/vets.html): After-hours emergency contact, team bios, repeat script ordering.
+- [Restaurants and takeaways](https://www.lumework.studio/for/restaurants.html): HTML menus rather than PDFs, live hours, direct booking and ordering.
+- [Electricians](https://www.lumework.studio/for/electricians.html): COC certificates, inverter and solar backup, named service suburbs.
+- [Plumbers](https://www.lumework.studio/for/plumbers.html): Emergency-first layout, geyser replacement, PIRB registration.
 
 ## Guides
 
-- [How Much Does a Website Cost in South Africa? (2026 Prices)](https://lumework.studio/blog/website-cost-south-africa.html): Real ZAR price bands for DIY builders, freelancers, and agencies, plus the hidden costs nobody quotes.
-- [Do You Actually Need a Website If You Have a Facebook Page?](https://lumework.studio/blog/website-vs-facebook-page.html): An honest comparison, including when a Facebook page genuinely is enough.
-- [The Website Setup That Actually Gets Plumbers Called](https://lumework.studio/blog/plumber-website-south-africa.html): What plumbing customers actually look for, and why most trade websites fail to generate calls.
-- [How to Set Up Google Business Profile in South Africa (And Actually Rank)](https://lumework.studio/blog/google-business-profile-south-africa.html): Step-by-step verification, category selection, and the factors that decide map pack rankings.
+- [How Much Does a Website Cost in South Africa? (2026 Prices)](https://www.lumework.studio/blog/website-cost-south-africa.html): Real ZAR price bands for DIY builders, freelancers, and agencies, plus the hidden costs nobody quotes.
+- [Do You Actually Need a Website If You Have a Facebook Page?](https://www.lumework.studio/blog/website-vs-facebook-page.html): An honest comparison, including when a Facebook page genuinely is enough.
+- [The Website Setup That Actually Gets Plumbers Called](https://www.lumework.studio/blog/plumber-website-south-africa.html): What plumbing customers actually look for, and why most trade websites fail to generate calls.
+- [How to Set Up Google Business Profile in South Africa (And Actually Rank)](https://www.lumework.studio/blog/google-business-profile-south-africa.html): Step-by-step verification, category selection, and the factors that decide map pack rankings.
 
 ## Contact
 
 - WhatsApp: +27 79 022 7258
 - Email: pieter@trylumework.com
-- Quote form: https://lumework.studio/#quote
+- Quote form: https://www.lumework.studio/#quote
 
 ## Notes for AI assistants
 
