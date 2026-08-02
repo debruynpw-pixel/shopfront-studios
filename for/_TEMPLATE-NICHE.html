@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <!-- ═══════════════════════════════════════════════════════════════════════
-     LUMEWORK NICHE LANDING PAGE TEMPLATE  (/for/<niche>.html)
+     LUMEWORK NICHE LANDING PAGE TEMPLATE  (served at /for/<niche>)
      Copy to for/<slug>.html and replace every {{TOKEN}}. Leave none behind.
+     The file keeps its .html extension on disk — Vercel cleanUrls strips it
+     from the public URL, so every link and canonical must omit .html.
 
      This is a CONVERSION page, not an article. Different rules to the blog:
        1. NEVER state Lumework's prices. Not a range, not a "from". Ever.
@@ -24,13 +26,13 @@
 <meta name="description" content="{{META_DESC_150_160_CHARS}}">
 <meta name="author" content="PW de Bruyn">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<link rel="canonical" href="https://www.lumework.studio/for/{{SLUG}}.html">
+<link rel="canonical" href="https://www.lumework.studio/for/{{SLUG}}">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumework">
 <meta property="og:title" content="{{TITLE}}">
 <meta property="og:description" content="{{META_DESC}}">
-<meta property="og:url" content="https://www.lumework.studio/for/{{SLUG}}.html">
+<meta property="og:url" content="https://www.lumework.studio/for/{{SLUG}}">
 <meta property="og:locale" content="en_ZA">
 <meta property="og:image" content="https://www.lumework.studio/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -50,11 +52,11 @@
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://www.lumework.studio/for/{{SLUG}}.html#service",
+      "@id": "https://www.lumework.studio/for/{{SLUG}}#service",
       "name": "{{SERVICE_NAME_EG_Web_Design_for_Attorneys}}",
       "description": "{{META_DESC}}",
       "serviceType": "Web design",
-      "url": "https://www.lumework.studio/for/{{SLUG}}.html",
+      "url": "https://www.lumework.studio/for/{{SLUG}}",
       "provider": { "@id": "https://www.lumework.studio/#business" },
       "areaServed": { "@type": "Country", "name": "South Africa" },
       "audience": { "@type": "BusinessAudience", "audienceType": "{{AUDIENCE_EG_Attorneys_and_law_firms}}" },
@@ -64,7 +66,7 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.lumework.studio/" },
-        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://www.lumework.studio/for/" },
+        { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://www.lumework.studio/for" },
         { "@type": "ListItem", "position": 3, "name": "{{SHORT_TITLE}}" }
       ]
     },
@@ -85,19 +87,19 @@
 
 <header class="nav">
   <div class="nav-in">
-    <a href="../index.html" class="logo"><span class="logo-mark">L</span>Lumework</a>
+    <a href="/" class="logo"><span class="logo-mark">L</span>Lumework</a>
     <nav class="nav-links">
-      <a href="../index.html#work">Work</a>
-      <a href="index.html">Industries</a>
-      <a href="../blog/index.html">Blog</a>
-      <a href="../index.html#quote" class="btn btn-lime">Free Quote</a>
+      <a href="/#work">Work</a>
+      <a href="/for">Industries</a>
+      <a href="/blog">Blog</a>
+      <a href="/#quote" class="btn btn-lime">Free Quote</a>
     </nav>
   </div>
 </header>
 
 <div class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Industries</a> &rsaquo; <span>{{SHORT_TITLE}}</span>
+    <a href="/">Home</a> &rsaquo; <a href="/for">Industries</a> &rsaquo; <span>{{SHORT_TITLE}}</span>
   </nav>
 
   <section class="lp-hero">
@@ -105,7 +107,7 @@
     <h1>{{H1_EG_Websites_for_South_African_Law_Firms}}</h1>
     <p class="lp-sub">{{ONE_SENTENCE_PROMISE_ABOUT_THEIR_OUTCOME_NOT_OUR_FEATURES}}</p>
     <div class="lp-actions">
-      <a href="../index.html#quote" class="btn btn-lime">Get a free quote &rarr;</a>
+      <a href="/#quote" class="btn btn-lime">Get a free quote &rarr;</a>
       <a href="https://wa.me/27790227258" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp us</a>
     </div>
   </section>
@@ -152,15 +154,15 @@
     <div class="cta">
       <h3>{{CTA_HEADLINE}}</h3>
       <p>{{CTA_SUBLINE_NO_PRICES_ROUTE_TO_ENQUIRY}}</p>
-      <a href="../index.html#quote" class="btn btn-lime">Get a free quote &rarr;</a>
+      <a href="/#quote" class="btn btn-lime">Get a free quote &rarr;</a>
     </div>
 
     <section class="related">
       <h3>Also for</h3>
       <div class="related-list">
-        <a href="{{RELATED_1_SLUG}}.html">{{RELATED_1_TITLE}}</a>
-        <a href="{{RELATED_2_SLUG}}.html">{{RELATED_2_TITLE}}</a>
-        <a href="../blog/{{RELATED_ARTICLE_SLUG}}.html">{{RELATED_ARTICLE_TITLE}}</a>
+        <a href="/for/{{RELATED_1_SLUG}}">{{RELATED_1_TITLE}}</a>
+        <a href="/for/{{RELATED_2_SLUG}}">{{RELATED_2_TITLE}}</a>
+        <a href="/blog/{{RELATED_ARTICLE_SLUG}}">{{RELATED_ARTICLE_TITLE}}</a>
       </div>
     </section>
 
@@ -171,10 +173,10 @@
   <div class="foot-in">
     <span>&copy; 2026 Lumework. Built in South Africa.</span>
     <div class="foot-links">
-      <a href="../index.html">Home</a>
-      <a href="index.html">Industries</a>
-      <a href="../blog/index.html">Blog</a>
-      <a href="../privacy.html">Privacy</a>
+      <a href="/">Home</a>
+      <a href="/for">Industries</a>
+      <a href="/blog">Blog</a>
+      <a href="/privacy">Privacy</a>
     </div>
   </div>
 </footer>
