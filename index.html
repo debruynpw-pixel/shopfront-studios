@@ -1998,22 +1998,30 @@ document.getElementById('qsubmit').addEventListener('click', function(){
   var waURL = 'https://wa.me/27790227258?text='+encodeURIComponent(msg);
   document.getElementById('qwa').href = waURL;
 
-  /* email the lead via FormSubmit (AJAX; fire-and-forget) */
+  /* email the lead via FormSubmit
+     keepalive:true is REQUIRED — the auto-open of wa.me below unloads the page
+     on mobile and cancels a normal fetch, so the lead email never sends. */
+  var leadURL  = 'https://formsubmit.co/ajax/pieter@trylumework.com';
+  var leadBody = JSON.stringify({
+    _subject:'🔥 New quote lead ('+(MODE==='quick'?'quick':'advanced')+'): '+name+(biz?' ('+biz+')':''),
+    _template:'table',
+    _captcha:'false',
+    Mode:MODE, Name:name, Business:biz, Email:email, Phone:phone,
+    BrandColours:colors, ExistingLink:link,
+    Type:answers.type, Industry:answers.industry, Vibe:answers.vibe,
+    Services:answers.services.join(', '),
+    Integrations:answers.integrations.join(', '),
+    Goal:answers.goal, Timeline:answers.timeline
+  });
+  /* NOT sendBeacon: a Blob of type application/json forces a CORS preflight that
+     sendBeacon cannot complete, so it fails silently. fetch+keepalive does CORS
+     properly AND survives the page unload. */
   try{
-    fetch('https://formsubmit.co/ajax/pieter@trylumework.com',{
+    fetch(leadURL,{
       method:'POST',
+      keepalive:true,
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        _subject:'🔥 New quote lead ('+(MODE==='quick'?'quick':'advanced')+'): '+name+(biz?' ('+biz+')':''),
-        _template:'table',
-        _captcha:'false',
-        Mode:MODE, Name:name, Business:biz, Email:email, Phone:phone,
-        BrandColours:colors, ExistingLink:link,
-        Type:answers.type, Industry:answers.industry, Vibe:answers.vibe,
-        Services:answers.services.join(', '),
-        Integrations:answers.integrations.join(', '),
-        Goal:answers.goal, Timeline:answers.timeline
-      })
+      body:leadBody
     }).catch(function(){});
   }catch(e){}
 
@@ -2021,8 +2029,8 @@ document.getElementById('qsubmit').addEventListener('click', function(){
   try{ gtag('event','conversion',{'send_to':'AW-18351834383/ileWCJXgntccEI-K665E','value':100.0,'currency':'ZAR'}); }catch(e){}
 
   show(TOTAL);
-  /* auto-open WhatsApp */
-  setTimeout(function(){ window.open(waURL,'_blank'); }, 700);
+  /* auto-open WhatsApp — delayed so the lead send has time to leave the device */
+  setTimeout(function(){ window.open(waURL,'_blank'); }, 1500);
 });
 
 /* Google Ads — WhatsApp Click conversion (fires on any wa.me link click) */
