@@ -29,6 +29,7 @@ Also serves US-based trades and contractors on a selective basis.
 ## Key pages
 
 - [Home](https://www.lumework.studio/): Services, portfolio, and a 60-second quote tool.
+- [Our Work](https://www.lumework.studio/work): Ten live client and concept websites, each embedded on the page so it can be browsed directly. Covers security, trades, event hire, motorsport, bookkeeping, FMCG and hospitality.
 - [Industries](https://www.lumework.studio/for): What each industry's website actually needs, by sector.
 - [Blog](https://www.lumework.studio/blog): Practical guides on web design costs, local SEO, and getting found online in South Africa.
 - [Web design in Cape Town](https://www.lumework.studio/lp-webdesign-cpt): What a Cape Town business gets, and how the free-demo-first process works.
